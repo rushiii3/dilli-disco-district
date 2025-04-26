@@ -164,14 +164,14 @@ const Navbar = () => {
               </a>
             </li>
             <li className="hidden md:block">
-              <a
+              <Link
                 className="text-base font-semibold transition-opacity duration-300 px-2.5 z-10"
-                href="/collections/shop-all"
+                href={"/product"}
                 aria-disabled="false"
                 data-discover="true"
               >
                 Shop All
-              </a>
+              </Link>
             </li>
             <li className="hidden md:block">
               <button

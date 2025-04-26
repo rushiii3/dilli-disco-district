@@ -1,0 +1,1635 @@
+{
+  "data": [
+    {
+      "title": "Classic Polo Shirt",
+      "slug": "classic-polo-shirt",
+      "details": "Classic Polo Shirt - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "93",
+          "length": "66"
+        },
+        {
+          "size": "M",
+          "chest": "95",
+          "length": "68"
+        },
+        {
+          "size": "L",
+          "chest": "104",
+          "length": "72"
+        },
+        {
+          "size": "XL",
+          "chest": "110",
+          "length": "72"
+        },
+        {
+          "size": "XXL",
+          "chest": "114",
+          "length": "74"
+        },
+        {
+          "size": "XXXL",
+          "chest": "117",
+          "length": "77"
+        }
+      ],
+      "price": 69.55,
+      "offer_price": 59.49,
+      "colors": [
+        {
+          "color": "blue"
+        },
+        {
+          "color": "black"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=16fHiJazJrPRXGIKbyz6Hifural5BfqBQ",
+          "alt": "Classic Polo Shirt Front"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1CBMfrPj5lIzfAiKc0KSs6iAdMQGht_iB",
+          "alt": "Classic Polo Shirt Back"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1YKVxcaABaTK_KXG5BNDSoVG6acZEPMYn",
+          "alt": "Classic Polo Shirt Front"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1LY8K8mHiZEaYTWx0jWiv3tKps55laXnp",
+          "alt": "Classic Polo Shirt Back"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1-0TC6Z_hV0DTiexs3bk08QuITUjCbQei",
+          "alt": "Classic Polo Shirt Front"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1-AaFwK3-b5eDG_mw3PQgPJcE5Y50F8a5",
+          "alt": "Classic Polo Shirt Back"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1KjaYLvbBguBJCkN0tj2z2bKcxRBS6_zf",
+          "alt": "Classic Polo Shirt Front"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1KjaYLvbBguBJCkN0tj2z2bKcxRBS6_zf",
+          "alt": "Classic Polo Shirt Back"
+        }
+      ],
+      "you_may_also_like": [
+        "essential-cotton-tee",
+        "premium-organic-tee",
+        "athleisure-joggers"
+      ]
+    },
+    {
+      "title": "Essential Cotton Tee",
+      "slug": "essential-cotton-tee",
+      "details": "Essential Cotton Tee - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "90",
+          "length": "68"
+        },
+        {
+          "size": "M",
+          "chest": "98",
+          "length": "68"
+        },
+        {
+          "size": "L",
+          "chest": "105",
+          "length": "72"
+        },
+        {
+          "size": "XL",
+          "chest": "109",
+          "length": "72"
+        },
+        {
+          "size": "XXL",
+          "chest": "113",
+          "length": "74"
+        },
+        {
+          "size": "XXXL",
+          "chest": "115",
+          "length": "76"
+        }
+      ],
+      "price": 25.1,
+      "offer_price": 16.15,
+      "colors": [
+        {
+          "color": "blue"
+        },
+        {
+          "color": "gray"
+        }
+      ],
+      "images": [
+          {
+            "src": "https://drive.google.com/uc?export=download&id=1bME_3y718fl6tF2uuda1l6fB1epGRFfI",
+            "alt": "Image 1"
+          },
+          {
+            "src": "https://drive.google.com/uc?export=download&id=1F5qmigIQckU4dAXGb5Z2B54XhT8MLOJr",
+            "alt": "Image 2"
+          },
+          {
+            "src": "https://drive.google.com/uc?export=download&id=10F06yGUBFWWm5rI2eSj3Une3dcrJj1nX",
+            "alt": "Image 3"
+          },
+          {
+            "src": "https://drive.google.com/uc?export=download&id=1pw-iGyjJA7bD8g6DwuIrw4DQwHHbqg1b",
+            "alt": "Image 4"
+          },
+          {
+            "src": "https://drive.google.com/uc?export=download&id=10anxBs_JOUwrjlgtANP_tYqkiI7pNI9f",
+            "alt": "Image 5"
+          },
+          {
+            "src": "https://drive.google.com/uc?export=download&id=1f70Of5k4OURIsTJjjmSUDAlIfwYfMWIu",
+            "alt": "Image 6"
+          },
+          {
+            "src": "https://drive.google.com/uc?export=download&id=1fGVVElwO6Rli6ShbhBRZIKs_FgCMsgAl",
+            "alt": "Image 7"
+          },
+          {
+            "src": "https://drive.google.com/uc?export=download&id=1qkb33Z7ZGVN_w-jRfC-ccjTwRjVQo2pg",
+            "alt": "Image 8"
+          }
+      ],
+      "you_may_also_like": [
+        "modern-fit-blazer",
+        "sleek-bomber-jacket",
+        "cropped-puffer-jacket"
+      ]
+    },
+    {
+      "title": "Vintage Denim Jacket",
+      "slug": "vintage-denim-jacket",
+      "details": "Vintage Denim Jacket - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "94",
+          "length": "66"
+        },
+        {
+          "size": "M",
+          "chest": "100",
+          "length": "69"
+        },
+        {
+          "size": "L",
+          "chest": "103",
+          "length": "71"
+        },
+        {
+          "size": "XL",
+          "chest": "109",
+          "length": "73"
+        },
+        {
+          "size": "XXL",
+          "chest": "111",
+          "length": "76"
+        },
+        {
+          "size": "XXXL",
+          "chest": "117",
+          "length": "78"
+        }
+      ],
+      "price": 22.63,
+      "offer_price": 12.59,
+      "colors": [
+        {
+          "color": "navy"
+        },
+        {
+          "color": "green"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1jJYeI-yOAPJo-l5YHfOfNpMKUR-B3G7o",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1cCT23nZuPagTCJf6fEbap2XTNz1dbZQf",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1I8dilqjgqt5UzNM9a_3EjShSkOf98Kg3",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=152pyIzC6dG6JVQqwIDuXDLBTCRgq4Qd2",
+          "alt": "Image 4"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1_TEDLWF2bwyoKPaNzWtSdDqaHtrqO3jF",
+          "alt": "Image 5"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1PYoLouSd7KelqSEk09bB6ONMeTRwQ3nl",
+          "alt": "Image 6"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1pd3TaXQq74ORBe-S0f2_8BG6H0-rGGu0",
+          "alt": "Image 7"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1E0A4sxGSQR9HzPWHbHqUuLCJgabdP0Za",
+          "alt": "Image 8"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "wool-blend-coat",
+        "cropped-puffer-jacket",
+        "utility-cargo-pants"
+      ]
+    },
+    {
+      "title": "Urban Hoodie",
+      "slug": "urban-hoodie",
+      "details": "Urban Hoodie - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "90",
+          "length": "65"
+        },
+        {
+          "size": "M",
+          "chest": "97",
+          "length": "70"
+        },
+        {
+          "size": "L",
+          "chest": "100",
+          "length": "72"
+        },
+        {
+          "size": "XL",
+          "chest": "110",
+          "length": "72"
+        },
+        {
+          "size": "XXL",
+          "chest": "112",
+          "length": "75"
+        },
+        {
+          "size": "XXXL",
+          "chest": "118",
+          "length": "78"
+        }
+      ],
+      "price": 74.35,
+      "offer_price": 68.56,
+      "colors": [
+        {
+          "color": "olive"
+        },
+        {
+          "color": "charcoal"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1YUF3qGnGjLvBmqTWbVeBVPqeP_uBLNCv",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=19HE2tmxPMN6ImI_alWvemwKNqeJoAfwu",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1q--E0OOoBFPfdaIitxGxQEKZ5Y3WQljS",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1Wzvi1rI9ABpM4O4C1sm9qvzIjOBZIyDx",
+          "alt": "Image 4"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=14W1VZ77Qc-oB3S-MFYx0fEUZB-VFdAts",
+          "alt": "Image 5"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1ofmkrFUDqww9TJkxe41k19VDwkvYbzCj",
+          "alt": "Image 6"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=18VGgq4-9AAT4rRrlwIlP5zHJqwCQ2eZS",
+          "alt": "Image 7"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1F_iRWUsNc9W3IOlhezul6cCbcqFLM9ZF",
+          "alt": "Image 8"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "retro-track-jacket",
+        "cropped-puffer-jacket",
+        "sleek-bomber-jacket"
+      ]
+    },
+    {
+      "title": "Sleek Bomber Jacket",
+      "slug": "sleek-bomber-jacket",
+      "details": "Sleek Bomber Jacket - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "92",
+          "length": "67"
+        },
+        {
+          "size": "M",
+          "chest": "97",
+          "length": "69"
+        },
+        {
+          "size": "L",
+          "chest": "101",
+          "length": "72"
+        },
+        {
+          "size": "XL",
+          "chest": "105",
+          "length": "74"
+        },
+        {
+          "size": "XXL",
+          "chest": "111",
+          "length": "74"
+        },
+        {
+          "size": "XXXL",
+          "chest": "116",
+          "length": "76"
+        }
+      ],
+      "price": 65.37,
+      "offer_price": 51.62,
+      "colors": [
+        {
+          "color": "red"
+        },
+        {
+          "color": "white"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1CxbzeS1LOUZBGPN7GwHZBDsndtr6bTr8",
+          "alt": "Image 9"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1PAqCpHxAVwagKG4I112Xr8CR-WtAgf4m",
+          "alt": "Image 10"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1wVO6rQ0vErKqHXoNkVFvbMVpOdjDYVcA",
+          "alt": "Image 11"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1vLjvt_3v6J5Wp-_VHgYYJXoo8P_enDaG",
+          "alt": "Image 12"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1kowXKBjtVANZoIf_uwaUfNdxJtlHTOuQ",
+          "alt": "Image 13"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1HmhwWF1cqUVIfsbZR9XOhDcKFIFDcne1",
+          "alt": "Image 14"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=12emR2ijBwBZheDlxtraiIlIUvAQhj3j4",
+          "alt": "Image 15"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1fKkw6Scf0rrwBzvXaVbYk9SFuVFoQYq4",
+          "alt": "Image 16"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "modern-fit-blazer",
+        "cropped-puffer-jacket",
+        "essential-cotton-tee"
+      ]
+    },
+    {
+      "title": "Relaxed Fit Polo",
+      "slug": "relaxed-fit-polo",
+      "details": "Relaxed Fit Polo - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "91",
+          "length": "66"
+        },
+        {
+          "size": "M",
+          "chest": "99",
+          "length": "68"
+        },
+        {
+          "size": "L",
+          "chest": "102",
+          "length": "71"
+        },
+        {
+          "size": "XL",
+          "chest": "107",
+          "length": "74"
+        },
+        {
+          "size": "XXL",
+          "chest": "113",
+          "length": "76"
+        },
+        {
+          "size": "XXXL",
+          "chest": "115",
+          "length": "77"
+        }
+      ],
+      "price": 80.0,
+      "offer_price": 65.06,
+      "colors": [
+        {
+          "color": "red"
+        },
+        {
+          "color": "white"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1AyLh61l_rFA1SPvlVafLLXdM170YbQPz",
+          "alt": "Image 17"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1qL0212CVJOj98ynka3mEWXLwufmq88IT",
+          "alt": "Image 18"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1asIWHrCkYoUBlsGSjXh-zYQ51bBjFMH3",
+          "alt": "Image 19"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1pJcY4C09grGtEeQ87YR3LyPkXHZ7Sws8",
+          "alt": "Image 20"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1QWbnCXFLbeNEEjExAwgvKLTsQzS3IGMo",
+          "alt": "Image 21"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1ILqcUVreVafZ4_CFmSZ3-k4xCnnL6QGJ",
+          "alt": "Image 22"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=13iP6RyH5KzwWbAnHRzv6Ep0hdzq7Wi0A",
+          "alt": "Image 23"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1ZyQ5vap0sGBM6A7_19MaNg5Uvyk2R9gQ",
+          "alt": "Image 24"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "striped-summer-shirt",
+        "signature-logo-tee",
+        "retro-track-jacket"
+      ]
+    },
+    {
+      "title": "Premium Organic Tee",
+      "slug": "premium-organic-tee",
+      "details": "Premium Organic Tee - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "92",
+          "length": "65"
+        },
+        {
+          "size": "M",
+          "chest": "100",
+          "length": "69"
+        },
+        {
+          "size": "L",
+          "chest": "105",
+          "length": "71"
+        },
+        {
+          "size": "XL",
+          "chest": "110",
+          "length": "73"
+        },
+        {
+          "size": "XXL",
+          "chest": "115",
+          "length": "74"
+        },
+        {
+          "size": "XXXL",
+          "chest": "120",
+          "length": "76"
+        }
+      ],
+      "price": 26.42,
+      "offer_price": 15.01,
+      "colors": [
+        {
+          "color": "black"
+        },
+        {
+          "color": "light-blue"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1rHkmoqN2Y0CUY3mkPZrnoOuTFVkEBL6c",
+          "alt": "Image 25"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1DoAK8_gOrXgR0C9WcBAexqNRw2bidYPF",
+          "alt": "Image 26"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1TopS0zAN7QFgDjbSnMf4IUck22cjUJWu",
+          "alt": "Image 27"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1JGpKnNkYcZNJN96wez5zxoMiPEw6bhC-",
+          "alt": "Image 28"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1MNBWVNbWSH32uaQISinYeCaOPtMJMkac",
+          "alt": "Image 29"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1xSOsgGczjDZUjcypzNSGFyWsjIXWMYe4",
+          "alt": "Image 30"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1VsCEbswUhiCdB2PMRE077LWteuaLfvm8",
+          "alt": "Image 31"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1syro-l3oAZjfO_mxTeJD0198eZOih8ez",
+          "alt": "Image 33"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "vintage-denim-jacket",
+        "sleek-bomber-jacket",
+        "wool-blend-coat"
+      ]
+    },
+    {
+      "title": "Everyday Slim Jeans",
+      "slug": "everyday-slim-jeans",
+      "details": "Everyday Slim Jeans - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "92",
+          "length": "65"
+        },
+        {
+          "size": "M",
+          "chest": "96",
+          "length": "69"
+        },
+        {
+          "size": "L",
+          "chest": "101",
+          "length": "70"
+        },
+        {
+          "size": "XL",
+          "chest": "105",
+          "length": "73"
+        },
+        {
+          "size": "XXL",
+          "chest": "112",
+          "length": "75"
+        },
+        {
+          "size": "XXXL",
+          "chest": "120",
+          "length": "76"
+        }
+      ],
+      "price": 40.0,
+      "offer_price": 30.43,
+      "colors": [
+        {
+          "color": "white"
+        },
+        {
+          "color": "gray"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=16PQFO5l2t_FraiVUTV9BfnecA9bIwcm2",
+          "alt": "Image 31"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=17J8EU_KzYCprSBjATzO8e5TOn-dHACoB",
+          "alt": "Image 32"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1iQ5yGpTwssQlLbOt1tREuHjiSRcNMf_2",
+          "alt": "Image 33"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1SXI9kt7ToTeSEzTAJjebYwBCL-Jwxcf1",
+          "alt": "Image 34"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1X2bE587V5uaeaA3w3LG55SfB47EZyCo9",
+          "alt": "Image 35"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=17xE70Nw8u8Oafr0zZB1OXZhuE-AuYyYl",
+          "alt": "Image 36"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1Jn54rfRM63Wav5lwBr0QvfpJGsf9BQ24",
+          "alt": "Image 37"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1oVyXagfFi8qWIJUFI2gWaYvhrRzh1hbQ",
+          "alt": "Image 38"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "relaxed-fit-polo",
+        "athleisure-joggers",
+        "utility-cargo-pants"
+      ]
+    },
+    {
+      "title": "Cropped Puffer Jacket",
+      "slug": "cropped-puffer-jacket",
+      "details": "Cropped Puffer Jacket - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "92",
+          "length": "65"
+        },
+        {
+          "size": "M",
+          "chest": "100",
+          "length": "68"
+        },
+        {
+          "size": "L",
+          "chest": "105",
+          "length": "71"
+        },
+        {
+          "size": "XL",
+          "chest": "105",
+          "length": "72"
+        },
+        {
+          "size": "XXL",
+          "chest": "115",
+          "length": "74"
+        },
+        {
+          "size": "XXXL",
+          "chest": "117",
+          "length": "78"
+        }
+      ],
+      "price": 96.33,
+      "offer_price": 83.11,
+      "colors": [
+        {
+          "color": "red"
+        },
+        {
+          "color": "navy"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1BfffGQyc5gYNW8upzdtB8y5RZCbP6I8P",
+          "alt": "Image 39"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1w16AkEDzp9n58WVPAcA611NuBK5CO1-L",
+          "alt": "Image 40"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=14YtZIw6M5ie2b0TwR67eR_l0glM4l_Kb",
+          "alt": "Image 41"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1ICW91005wXAW-yFtlC7a8JuZDEfvOUIw",
+          "alt": "Image 42"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1R_aszxfbS6KmUTTb-ANU7aY0zorkG3Ym",
+          "alt": "Image 43"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=14GhYsKEQ0jWd7Hs_yW7BeLn9WeXNgFcH",
+          "alt": "Image 44"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1lHJ9gJbEjJhgiDv_LUvjMXcgIbWwmByu",
+          "alt": "Image 45"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1WaTtysTjV__FNgUPP1IV3Pu7-CRBfitR",
+          "alt": "Image 46"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "signature-logo-tee",
+        "urban-hoodie",
+        "tropical-vacation-shirt"
+      ]
+    },
+    {
+      "title": "Athleisure Joggers",
+      "slug": "athleisure-joggers",
+      "details": "Athleisure Joggers - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "95",
+          "length": "68"
+        },
+        {
+          "size": "M",
+          "chest": "100",
+          "length": "68"
+        },
+        {
+          "size": "L",
+          "chest": "104",
+          "length": "70"
+        },
+        {
+          "size": "XL",
+          "chest": "108",
+          "length": "74"
+        },
+        {
+          "size": "XXL",
+          "chest": "115",
+          "length": "75"
+        },
+        {
+          "size": "XXXL",
+          "chest": "115",
+          "length": "78"
+        }
+      ],
+      "price": 58.28,
+      "offer_price": 46.17,
+      "colors": [
+        {
+          "color": "olive"
+        },
+        {
+          "color": "red"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1Ak8aZWQBkjKN0NtzGE8ooh7con1wUd3m",
+          "alt": "Image 47"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1iCsd0rx0PIT2saTplcGfU_9_wMB4MoxN",
+          "alt": "Image 48"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1q-Rf4rX6EteSa95ThRwnqisDLjVC7yJW",
+          "alt": "Image 49"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1AFLQlzxp2g4O-D6g2OKWtoOTYVtxVg12",
+          "alt": "Image 50"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1wE6S_3z_cVg09EtsoAjOGh96NFp0Co1p",
+          "alt": "Image 51"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1nu-NiXntQVoPn8wo7doHhseMVRez5wGe",
+          "alt": "Image 52"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "utility-cargo-pants",
+        "slim-fit-chinos",
+        "wool-blend-coat"
+      ]
+    },
+    {
+      "title": "Signature Logo Tee",
+      "slug": "signature-logo-tee",
+      "details": "Signature Logo Tee - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "91",
+          "length": "67"
+        },
+        {
+          "size": "M",
+          "chest": "98",
+          "length": "68"
+        },
+        {
+          "size": "L",
+          "chest": "101",
+          "length": "70"
+        },
+        {
+          "size": "XL",
+          "chest": "107",
+          "length": "73"
+        },
+        {
+          "size": "XXL",
+          "chest": "110",
+          "length": "74"
+        },
+        {
+          "size": "XXXL",
+          "chest": "115",
+          "length": "78"
+        }
+      ],
+      "price": 95.03,
+      "offer_price": 88.15,
+      "colors": [
+        {
+          "color": "blue"
+        },
+        {
+          "color": "charcoal"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1gz8k5eynNNVkn-dW7is0lCIHvdrkvHGS",
+          "alt": "Image 53"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1BsBvX6LLBro4NdsyRo096cfKcObR8M0C",
+          "alt": "Image 54"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=12BGZKLfhCjwGB3o9b8MyfgvYWE4ZkZmx",
+          "alt": "Image 55"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1wb3FiRiDgo4ZrHlypxH5lbvMBxgB9xKD",
+          "alt": "Image 56"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1MqQHwxidILW4R732DcauhK2ojEsBnM8b",
+          "alt": "Image 57"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1-E9IPVGOxiori9OL0gNdLTSM5NpnnpY6",
+          "alt": "Image 58"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1waTpYCBbLkEoSitse48xRFZdy_EjJGPr",
+          "alt": "Image 59"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "modern-fit-blazer",
+        "slim-fit-chinos",
+        "retro-track-jacket"
+      ]
+    },
+    {
+      "title": "Utility Cargo Pants",
+      "slug": "utility-cargo-pants",
+      "details": "Utility Cargo Pants - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "93",
+          "length": "67"
+        },
+        {
+          "size": "M",
+          "chest": "99",
+          "length": "68"
+        },
+        {
+          "size": "L",
+          "chest": "102",
+          "length": "71"
+        },
+        {
+          "size": "XL",
+          "chest": "106",
+          "length": "72"
+        },
+        {
+          "size": "XXL",
+          "chest": "111",
+          "length": "76"
+        },
+        {
+          "size": "XXXL",
+          "chest": "119",
+          "length": "76"
+        }
+      ],
+      "price": 28.04,
+      "offer_price": 21.96,
+      "colors": [
+        {
+          "color": "white"
+        },
+        {
+          "color": "olive"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1REofn0wOLGwe0SFbbBgg-IBmjz4d6IJu",
+          "alt": "Image 60"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1fi6f4_Kve-iqZbQb89DtngU1nvKWzdeS",
+          "alt": "Image 61"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1MUcDzjYUUG7t_S3jC99UE909mhUzejfl",
+          "alt": "Image 62"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1Qa2h_WLo4CmGrO6ggdLE2hXq7omewhWo",
+          "alt": "Image 63"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1ywRF81Q3XvZjCJzp06JHFsY6kTb_czbj",
+          "alt": "Image 64"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1MX7JncMne9nWqFzrmFOXbgykCE0He-Kb",
+          "alt": "Image 65"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1SM-AslTZOYZ5PxyEr38qubCNJ2MmE44r",
+          "alt": "Image 66"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=13LVCzWEgrc7WcFAbZdgu96q-YwZ34T0_",
+          "alt": "Image 67"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "cropped-puffer-jacket",
+        "striped-summer-shirt",
+        "athleisure-joggers"
+      ]
+    },
+    {
+      "title": "Striped Summer Shirt",
+      "slug": "striped-summer-shirt",
+      "details": "Striped Summer Shirt - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "94",
+          "length": "67"
+        },
+        {
+          "size": "M",
+          "chest": "97",
+          "length": "70"
+        },
+        {
+          "size": "L",
+          "chest": "104",
+          "length": "72"
+        },
+        {
+          "size": "XL",
+          "chest": "110",
+          "length": "74"
+        },
+        {
+          "size": "XXL",
+          "chest": "111",
+          "length": "76"
+        },
+        {
+          "size": "XXXL",
+          "chest": "120",
+          "length": "77"
+        }
+      ],
+      "price": 99.68,
+      "offer_price": 87.08,
+      "colors": [
+        {
+          "color": "black"
+        },
+        {
+          "color": "navy"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1v3dE0IkvVu6VYX_0Qb0mFHmKUDTBp9Hd",
+          "alt": "Image 68"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1o6zbx5wMoqqUoN9fvR4z8NX2HYSuTws4",
+          "alt": "Image 69"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1HQszlCOSP71v-EuRLDngPbQdFpBPYs9W",
+          "alt": "Image 70"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1WYENa0EOMz57o6dxSStvM2Yj3xXiJ_0L",
+          "alt": "Image 71"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1tu7Rt3crqugjALZVqVWgUUE3gwVG818c",
+          "alt": "Image 72"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1IV6nNWgzjKH087lBXgnLMjRRlx_wMl8V",
+          "alt": "Image 73"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1Q5jiJn-klKN15mb7YTbcVqkrJCz4iyh9",
+          "alt": "Image 74"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "slim-fit-chinos",
+        "cropped-puffer-jacket",
+        "signature-logo-tee"
+      ]
+    },
+    {
+      "title": "Fleece Lined Hoodie",
+      "slug": "fleece-lined-hoodie",
+      "details": "Fleece Lined Hoodie - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "92",
+          "length": "65"
+        },
+        {
+          "size": "M",
+          "chest": "100",
+          "length": "70"
+        },
+        {
+          "size": "L",
+          "chest": "101",
+          "length": "72"
+        },
+        {
+          "size": "XL",
+          "chest": "110",
+          "length": "73"
+        },
+        {
+          "size": "XXL",
+          "chest": "115",
+          "length": "76"
+        },
+        {
+          "size": "XXXL",
+          "chest": "118",
+          "length": "78"
+        }
+      ],
+      "price": 69.2,
+      "offer_price": 56.3,
+      "colors": [
+        {
+          "color": "blue"
+        },
+        {
+          "color": "gray"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1sm49Lc9zzjvHfIcI1tWQEZUfMqp9W62G",
+          "alt": "Image 75"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1_t9L4LoEzNzlGO05kNTM82tPj6G4Sfp8",
+          "alt": "Image 76"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=18iN9_Hk4lP3i0fViT0MD8QmKMyCzNKeX",
+          "alt": "Image 77"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=111KweH1vgUUWbIeP28iOHtBRoJz2ksho",
+          "alt": "Image 78"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1X2J65t1IaaP-LWo1ba6lyqWRTDj-Jbxk",
+          "alt": "Image 79"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=10BFfmjXxWJ5GbBOphW5hK8CpY8OkrlDw",
+          "alt": "Image 80"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1wBnUr636VcozijigxFcFM8vXYfzgkyvo",
+          "alt": "Image 81"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1ID9Fg_runlu7tK7L68O8NDK2oPBu5TZ7",
+          "alt": "Image 82"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "retro-track-jacket",
+        "premium-organic-tee",
+        "vintage-denim-jacket"
+      ]
+    },
+    {
+      "title": "Retro Track Jacket",
+      "slug": "retro-track-jacket",
+      "details": "Retro Track Jacket - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "94",
+          "length": "67"
+        },
+        {
+          "size": "M",
+          "chest": "97",
+          "length": "69"
+        },
+        {
+          "size": "L",
+          "chest": "102",
+          "length": "70"
+        },
+        {
+          "size": "XL",
+          "chest": "109",
+          "length": "74"
+        },
+        {
+          "size": "XXL",
+          "chest": "110",
+          "length": "74"
+        },
+        {
+          "size": "XXXL",
+          "chest": "116",
+          "length": "76"
+        }
+      ],
+      "price": 80.94,
+      "offer_price": 68.81,
+      "colors": [
+        {
+          "color": "navy"
+        },
+        {
+          "color": "green"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1HkUfMAsB6KW5NcgDRTE_ACplpzCdoFMy",
+          "alt": "Image 83"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1Wwv9P0_iUTZHraszFxkU9P5-ZSmmLv26",
+          "alt": "Image 84"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=18E6ghFISt6K5e6GVCJ_-nHJTDRKi034U",
+          "alt": "Image 85"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1pC-SvdPApN7wp_Bayq-97n-IoVd2gq3J",
+          "alt": "Image 86"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1jxYV5lR7kv3rIU1nPs57yJ9yQznUWJwK",
+          "alt": "Image 87"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1RtbhhnCb41Gqx8PUiES1tkLaxhdMhCM1",
+          "alt": "Image 88"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1xniCpbewYleUBU3vYJRyPzdUz2pyjUO9",
+          "alt": "Image 89"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "utility-cargo-pants",
+        "tropical-vacation-shirt",
+        "everyday-slim-jeans"
+      ]
+    },
+    {
+      "title": "Slim Fit Chinos",
+      "slug": "slim-fit-chinos",
+      "details": "Slim Fit Chinos - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "94",
+          "length": "67"
+        },
+        {
+          "size": "M",
+          "chest": "97",
+          "length": "70"
+        },
+        {
+          "size": "L",
+          "chest": "103",
+          "length": "71"
+        },
+        {
+          "size": "XL",
+          "chest": "110",
+          "length": "74"
+        },
+        {
+          "size": "XXL",
+          "chest": "111",
+          "length": "76"
+        },
+        {
+          "size": "XXXL",
+          "chest": "118",
+          "length": "77"
+        }
+      ],
+      "price": 92.78,
+      "offer_price": 81.43,
+      "colors": [
+        {
+          "color": "olive"
+        },
+        {
+          "color": "black"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1ji1leocqx-EHucZyyETF1TvzLg5ne-tT",
+          "alt": "Image 90"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1QIMATlcrjJH-Oh0A0nuFjk6TMrvgZr3R",
+          "alt": "Image 91"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1f22liyUoy-P5-EzxJRLn1U80j8D0wfHB",
+          "alt": "Image 92"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1m7A0FQteLICoGpJV_SKXXNnKedq6Ftzj",
+          "alt": "Image 93"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=16BJXxL7DAr2vr6WtJ8ZMn2oe7D2881Vf",
+          "alt": "Image 94"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1c6wlr2nlbREYTDiG8rs84CFs3DUaVTtL",
+          "alt": "Image 95"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=191OYjG_HlQXNirUaGlNIh1wdLW0zIvW5",
+          "alt": "Image 96"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1g9GoaImmTQac8jRqT14wwWiGzO5T5kKY",
+          "alt": "Image 97"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "vintage-denim-jacket",
+        "everyday-slim-jeans",
+        "cropped-puffer-jacket"
+      ]
+    },
+    {
+      "title": "Tropical Vacation Shirt",
+      "slug": "tropical-vacation-shirt",
+      "details": "Tropical Vacation Shirt - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "90",
+          "length": "65"
+        },
+        {
+          "size": "M",
+          "chest": "97",
+          "length": "70"
+        },
+        {
+          "size": "L",
+          "chest": "100",
+          "length": "71"
+        },
+        {
+          "size": "XL",
+          "chest": "107",
+          "length": "74"
+        },
+        {
+          "size": "XXL",
+          "chest": "110",
+          "length": "76"
+        },
+        {
+          "size": "XXXL",
+          "chest": "118",
+          "length": "77"
+        }
+      ],
+      "price": 63.94,
+      "offer_price": 50.37,
+      "colors": [
+        {
+          "color": "light-blue"
+        },
+        {
+          "color": "white"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1BnBKUZCH4Ez6glBpgkk9v0bodXs_7BBO",
+          "alt": "Image 98"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1Vvd-3AelAyIMWeHbCw9kpyQePpanwrUE",
+          "alt": "Image 99"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1I4U-4mrA31AIL0F_4uoAkMGBP-pdpqTt",
+          "alt": "Image 100"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1hTNC4NQ-Ypert3lWwhWsyM2aJyiaVsFF",
+          "alt": "Image 101"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=11HzMY2FzF_TenMXlSwHMUIjLk5CVbnGg",
+          "alt": "Image 102"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1oIxge96a1NHxGelDmMQKmGQXP4ZakSA4",
+          "alt": "Image 103"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1_uZIgP-nYJHP5puQmqCJxTUN22bCnis5",
+          "alt": "Image 104"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1i80a3Xwg40rknV6r4ZTrQuS0kDOowQ6p",
+          "alt": "Image 105"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "vintage-denim-jacket",
+        "retro-track-jacket",
+        "fleece-lined-hoodie"
+      ]
+    },
+    {
+      "title": "Wool Blend Coat",
+      "slug": "wool-blend-coat",
+      "details": "Wool Blend Coat - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "93",
+          "length": "65"
+        },
+        {
+          "size": "M",
+          "chest": "95",
+          "length": "70"
+        },
+        {
+          "size": "L",
+          "chest": "105",
+          "length": "72"
+        },
+        {
+          "size": "XL",
+          "chest": "108",
+          "length": "73"
+        },
+        {
+          "size": "XXL",
+          "chest": "112",
+          "length": "75"
+        },
+        {
+          "size": "XXXL",
+          "chest": "116",
+          "length": "78"
+        }
+      ],
+      "price": 95.96,
+      "offer_price": 82.71,
+      "colors": [
+        {
+          "color": "green"
+        },
+        {
+          "color": "black"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1FFz-f1y2v_FMqmTfaf1NB9yWNcbDWpGF",
+          "alt": "Image 106"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1O9lqjuBB63yl9hUNdUxgmOJVJJMpWDji",
+          "alt": "Image 107"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1hUe_A2QE2ebfc7GP0MdRSyM836NVijFw",
+          "alt": "Image 108"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1PJn1aNnjRIx3q7pkFFAoo5ovYIB77-xX",
+          "alt": "Image 109"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1qGz9AxT6otuvN5XQ1y0wYFaG0dEk28zn",
+          "alt": "Image 110"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1u9QgIL5iiTpu6--D4FNPRwO0UUYFVoJO",
+          "alt": "Image 111"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1fU2uXAzySXLI50faVSzPaL102MIUfql-",
+          "alt": "Image 112"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1DI1iVQgb2AHMoKuNQXQakBLsXU2yjh-4",
+          "alt": "Image 113"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "modern-fit-blazer",
+        "urban-hoodie",
+        "premium-organic-tee"
+      ]
+    },
+    {
+      "title": "Oversized Sweatshirt",
+      "slug": "oversized-sweatshirt",
+      "details": "Oversized Sweatshirt - premium quality clothing item.",
+      "sizeChart": [
+        {
+          "size": "S",
+          "chest": "90",
+          "length": "65"
+        },
+        {
+          "size": "M",
+          "chest": "97",
+          "length": "68"
+        },
+        {
+          "size": "L",
+          "chest": "103",
+          "length": "70"
+        },
+        {
+          "size": "XL",
+          "chest": "109",
+          "length": "73"
+        },
+        {
+          "size": "XXL",
+          "chest": "113",
+          "length": "76"
+        },
+        {
+          "size": "XXXL",
+          "chest": "115",
+          "length": "76"
+        }
+      ],
+      "price": 90.07,
+      "offer_price": 80.88,
+      "colors": [
+        {
+          "color": "red"
+        },
+        {
+          "color": "black"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1Wdq2ba-plKszKcDoCQPQJzQe1qQAgkTj",
+          "alt": "Image 114"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=17lyxBlo5eS_VfumllePlGkeXKiFGhC_j",
+          "alt": "Image 115"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1TmFSXpd0GLEN_Ylfzde1hL928bIR29Wi",
+          "alt": "Image 116"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1BpSbs1oYXo42KW4HWqdgBAsMBSWpBjBt",
+          "alt": "Image 117"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1oWLTR3p6ndJK2nMfG5oCb8f844QqvjBU",
+          "alt": "Image 118"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1sBbiKp7JtC3PhCNi6W7ofq9YLYEAl7Ot",
+          "alt": "Image 119"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1qyI-2zi51XXw49P67BRQ1c_2Ka8jbgKp",
+          "alt": "Image 120"
+        },
+        {
+          "src": "https://drive.google.com/uc?export=download&id=1KjaYLvbBguBJCkN0tj2z2bKcxRBS6_zf",
+          "alt": "Image 121"
+        }
+      ]
+      ,
+      "you_may_also_like": [
+        "slim-fit-chinos",
+        "striped-summer-shirt",
+        "wool-blend-coat"
+      ]
+    }
+  ]
+}

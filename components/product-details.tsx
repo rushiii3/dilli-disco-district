@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
-import Image from "next/image"
+// import Image from "next/image"
 
-export default function ProductDetails() {
+export default function ProductDetails({details, sizeChart}: {details: string, sizeChart: { size: string, chest: number, length: number }[]}) {
   const [activeTab, setActiveTab] = useState<string | null>(null)
 
   const toggleTab = (tab: string) => {
@@ -33,10 +33,9 @@ export default function ProductDetails() {
         >
           <div className="py-4 text-sm text-[#333333cc] leading-relaxed">
             <p className="mb-3">
-              The Raglan Bomber features a relaxed silhouette with raglan sleeves for a comfortable fit. Crafted from
-              premium materials with meticulous attention to detail.
+              {details}
             </p>
-            <ul className="space-y-2 pl-4">
+            {/* <ul className="space-y-2 pl-4">
               <li>• Premium cotton blend shell (80% cotton, 20% polyester)</li>
               <li>• Luxurious satin lining</li>
               <li>• Metal YKK zipper front closure</li>
@@ -44,7 +43,7 @@ export default function ProductDetails() {
               <li>• Side pockets with hidden snap closure</li>
               <li>• Relaxed, oversized fit</li>
               <li>• Dry clean only</li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>
@@ -73,41 +72,15 @@ export default function ProductDetails() {
                 </tr>
               </thead>
               <tbody className="text-[#333333cc]">
-                <tr className="border-b border-[#33333310]">
-                  <td className="py-2">XXS</td>
-                  <td className="py-2">96</td>
-                  <td className="py-2">62</td>
-                </tr>
-                <tr className="border-b border-[#33333310]">
-                  <td className="py-2">XS</td>
-                  <td className="py-2">100</td>
-                  <td className="py-2">64</td>
-                </tr>
-                <tr className="border-b border-[#33333310]">
-                  <td className="py-2">S</td>
-                  <td className="py-2">104</td>
-                  <td className="py-2">66</td>
-                </tr>
-                <tr className="border-b border-[#33333310]">
-                  <td className="py-2">M</td>
-                  <td className="py-2">108</td>
-                  <td className="py-2">68</td>
-                </tr>
-                <tr className="border-b border-[#33333310]">
-                  <td className="py-2">L</td>
-                  <td className="py-2">112</td>
-                  <td className="py-2">70</td>
-                </tr>
-                <tr className="border-b border-[#33333310]">
-                  <td className="py-2">XL</td>
-                  <td className="py-2">116</td>
-                  <td className="py-2">72</td>
-                </tr>
-                <tr className="border-b border-[#33333310]">
-                  <td className="py-2">XXL</td>
-                  <td className="py-2">120</td>
-                  <td className="py-2">74</td>
-                </tr>
+                {
+                    sizeChart.map((size, index) => (
+                        <tr key={index} className="border-b border-[#33333310]">
+                        <td className="py-2">{size.size}</td>
+                        <td className="py-2">{size.chest}</td>
+                        <td className="py-2">{size.length}</td>
+                      </tr>
+                    ))
+                }
               </tbody>
             </table>
             <p className="mt-4 text-xs text-[#33333399]">
@@ -117,7 +90,7 @@ export default function ProductDetails() {
         </div>
       </div>
 
-      <div className="border-b border-[#33333320] pb-3">
+      {/* <div className="border-b border-[#33333320] pb-3">
         <button
           onClick={() => toggleTab("styled")}
           className="w-full text-left py-2 text-sm flex items-center justify-between group"
@@ -166,7 +139,7 @@ export default function ProductDetails() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
