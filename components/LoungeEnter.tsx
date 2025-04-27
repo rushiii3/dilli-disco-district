@@ -1,11 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import React from "react";
 
 const LoungeEnterButton = () => {
   return (
     <>
-      <a
+      <Link
         className="absolute z-20 before:block before:h-14 before:w-14 before:absolute before:-top-4 md:before:hidden before:-left-4"
         href="/rooms/lounge"
         aria-disabled="false"
@@ -77,8 +78,8 @@ const LoungeEnterButton = () => {
             Enter Lounge
           </motion.span>
         </motion.span>
-      </a>
-      <a
+      </Link>
+      <Link
         className="absolute before:block before:h-14 before:w-14 before:absolute before:-top-4 md:before:hidden z-20 before:-right-4"
         href="/rooms/closet"
         aria-disabled="false"
@@ -156,7 +157,7 @@ const LoungeEnterButton = () => {
             Enter Closet
           </motion.span>
         </motion.span>
-      </a>
+      </Link>
     </>
   );
 };

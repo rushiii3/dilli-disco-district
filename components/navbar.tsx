@@ -19,10 +19,10 @@ const Navbar = () => {
     closeCart,
   } = useUIStore();
   const menuItems = [
-    { label: "Albums", href: "#", delay: "250ms" },
-    { label: "Projects", href: "#", delay: "300ms" },
-    { label: "Tour", href: "/pages/tour", delay: "350ms" },
-    { label: "Shop All", href: "/collections/shop-all", delay: "400ms" },
+    { label: "Products", href: "#", delay: "250ms" },
+    { label: "Collections", href: "#", delay: "300ms" },
+    { label: "528HZ", href: "/playlist", delay: "350ms" },
+    { label: "Shop All", href: "/product", delay: "400ms" },
   ];
   const containerVariants = {
     hidden: {
@@ -221,7 +221,7 @@ const Navbar = () => {
                 aria-disabled="false"
                 onClick={handleDropDown}
               >
-                Albums
+                Products
               </button>
             </li>
             <li className="hidden md:block">
@@ -230,7 +230,7 @@ const Navbar = () => {
                 aria-disabled="false"
                 onClick={handleDropDown}
               >
-                Projects
+                Collections
               </button>
             </li>
             <li className="hidden md:block">
@@ -240,7 +240,7 @@ const Navbar = () => {
                 aria-disabled="false"
                 data-discover="true"
               >
-                Tour
+                528HZ
               </a>
             </li>
             <li className="hidden md:block">
