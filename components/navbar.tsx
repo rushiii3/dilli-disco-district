@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { useUIStore } from "../store/useDrawerStore";
 import NavListSection from "./NavListSection";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const {
@@ -13,7 +13,10 @@ const Navbar = () => {
     isMainMenuOpen,
     isDropdownOpen,
     closeDrawer,
-    closeDropdown
+    closeDropdown,
+    isCartOpen,
+    openCart,
+    closeCart,
   } = useUIStore();
   const menuItems = [
     { label: "Albums", href: "#", delay: "250ms" },
@@ -21,7 +24,72 @@ const Navbar = () => {
     { label: "Tour", href: "/pages/tour", delay: "350ms" },
     { label: "Shop All", href: "/collections/shop-all", delay: "400ms" },
   ];
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+        duration: 0.4,
+        ease: "easeInOut",
+      },
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+        duration: 0.4,
+        ease: "easeInOut",
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+        staggerChildren: 0.08,
+        staggerDirection: -1, // Animate children in reverse order
+        duration: 0.4,
+        ease: "easeInOut",
+      },
+    },
+  };
 
+  const headingVariants = {
+    hidden: {
+      opacity: 0,
+      y: -10,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+    exit: {
+      opacity: 0,
+      y: -10,
+      transition: { duration: 0.4, ease: "easeIn" },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      x: -10,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+    exit: {
+      opacity: 0,
+      x: -10,
+      transition: { duration: 0.4, ease: "easeIn" },
+    },
+  };
   const exploreItems = [
     { label: "Front", href: "/rooms/front", delay: "250ms" },
     { label: "Studio", href: "/rooms/studio", delay: "300ms" },
@@ -122,6 +190,18 @@ const Navbar = () => {
     },
   ];
 
+  const drawerVariants = {
+    hidden: { x: "-100%" }, // Completely off-screen to left
+    visible: {
+      x: 0,
+      transition: {
+        type: "tween",
+        ease: [0.165, 0.84, 0.44, 1],
+        duration: 0.5,
+      },
+    },
+    exit: { x: "-100%", transition: { duration: 0.4 } },
+  };
   const handleDropDown = () => {
     console.log("Dropdown clicked");
 
@@ -187,227 +267,314 @@ const Navbar = () => {
               </button>
             </li>
             <li className="md:hidden">
-              {isDrawerOpen ? (
-                isDropdownOpen ? (
-                  <button
-                    onClick={closeDropdown}
-                    className="text-neutral-300 border-neutral-300 font-bold antialiased cursor-pointer px-2 h-10 relative border block"
-                  >
-                    Back
-                  </button>
+              <AnimatePresence mode="wait">
+                {isDrawerOpen ? (
+                  isDropdownOpen ? (
+                    <motion.button
+                      key="back"
+                      onClick={closeDropdown}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-neutral-300 border-neutral-300 font-bold antialiased cursor-pointer px-2 h-10 relative border block"
+                    >
+                      Back
+                    </motion.button>
+                  ) : (
+                    <motion.button
+                      key="close"
+                      onClick={closeDrawer}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-neutral-300 border-neutral-300 font-bold antialiased cursor-pointer px-2 h-10 relative border block"
+                    >
+                      Close
+                    </motion.button>
+                  )
                 ) : (
-                  <button
-                    onClick={closeDrawer}
+                  <motion.button
+                    key="menu"
+                    onClick={openDrawer}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
                     className="text-neutral-300 border-neutral-300 font-bold antialiased cursor-pointer px-2 h-10 relative border block"
                   >
-                    Close
-                  </button>
-                )
-              ) : (
-                <button
-                  onClick={openDrawer}
-                  className="text-neutral-300 border-neutral-300 font-bold antialiased cursor-pointer px-2 h-10 relative border block"
-                >
-                  Menu
-                </button>
-              )}
+                    Menu
+                  </motion.button>
+                )}
+              </AnimatePresence>
             </li>
           </ul>
-          <div
-            role="dialog"
-            aria-modal="true"
-            className={cn(
-              "fixed md:absolute z-10 top-0 bottom-0 max-w-[353px] w-full transition-all left-0 text-left duration-[500ms] ease-[cubic-bezier(.165,.84,.44,1)]",
-              isDrawerOpen
-                ? "visible translate-x-0"
-                : "invisible -translate-x-full"
-            )}
-            style={{ width: "calc(-135px + 100vw)" }}
-          >
-            <div
-              className={`absolute z-10 left-0 top-0 bottom-0 h-full w-full flex flex-col justify-between items-start py-28 px-6 transition-[opacity,visibility] ease-in-out duration-[350ms] ${
-                isMainMenuOpen ? "visible opacity-100" : "invisible opacity-0"
-              }`}
-            >
-              <ul className="header-nav-list">
-                {menuItems.map(({ label, href, delay }, index) => {
-                  const isDropdownTrigger = href === "#";
-
-                  return (
-                    <li
-                      key={index}
-                      className={`font-bold text-2xl leading-tight transition-[opacity,visibility,transform] ease-in-out duration-1000 opacity-0 invisible -translate-x-[10px] ${
-                        isMainMenuOpen
-                          ? "opacity-100 visible translate-x-0"
-                          : ""
-                      }`}
-                      style={{ transitionDelay: delay }}
-                    >
-                      {isDropdownTrigger ? (
-                        <button
-                          type="button"
-                          onClick={handleDropDown}
-                          className="block w-full text-left"
+          <AnimatePresence>
+            {isDrawerOpen && (
+              <motion.div
+                role="dialog"
+                aria-modal="true"
+                className="fixed md:absolute z-10 top-0 bottom-0 max-w-[353px] w-full left-0 text-left"
+                style={{ width: "calc(-135px + 100vw)" }}
+                variants={drawerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
+                <motion.div
+                  className="absolute z-10 left-0 top-0 bottom-0 h-full w-full flex flex-col justify-between items-start py-28 px-6"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <AnimatePresence mode="wait">
+                    {isMainMenuOpen && (
+                      <>
+                        {/* Main Menu Section */}
+                        <motion.ul
+                          className="header-nav-list"
+                          variants={containerVariants}
+                          initial="hidden"
+                          animate="visible"
+                          exit="exit"
+                          key="mainMenu"
                         >
-                          {label}
-                        </button>
-                      ) : (
-                        <a href={href} aria-disabled={false}>
-                          {label}
-                        </a>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
+                          {menuItems.map(({ label, href }) => {
+                            const isDropdownTrigger = href === "#";
+                            return (
+                              <motion.li
+                                key={label}
+                                variants={itemVariants}
+                                className="font-bold text-2xl leading-tight"
+                              >
+                                {isDropdownTrigger ? (
+                                  <button
+                                    type="button"
+                                    onClick={handleDropDown}
+                                    className="block w-full text-left"
+                                  >
+                                    {label}
+                                  </button>
+                                ) : (
+                                  <a href={href} aria-disabled={false}>
+                                    {label}
+                                  </a>
+                                )}
+                              </motion.li>
+                            );
+                          })}
+                        </motion.ul>
 
-              <ul className="header-nav-list">
-                <li className="md:hidden mb-6 font-bold transition-all duration-1000 delay-[200ms]">
-                  <h3>Explore</h3>
-                </li>
-                {exploreItems.map(({ label, href, delay, disabled }, index) => (
-                  <li
-                    key={index}
-                    className={`font-bold text-2xl leading-tight transition-[opacity,visibility,transform] ease-in-out duration-1000 opacity-0 invisible -translate-x-[10px] ${
-                      isMainMenuOpen ? "opacity-100 visible translate-x-0" : ""
-                    }`}
-                    style={{ transitionDelay: delay }}
-                  >
-                    <a
-                      href={href}
-                      aria-disabled={disabled ? "true" : "false"}
-                      className={
-                        disabled ? "pointer-events-none opacity-20" : ""
-                      }
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <NavListSection
-              title="Albums"
-              items={albumLinks}
-              isVisible={isDropdownOpen}
-            />
-            <NavListSection
-              title="Projects"
-              items={projects}
-              isVisible={false}
-            />
-            <NavListSection
-              title="Explore"
-              items={exploreItems}
-              isVisible={false}
-              bottomAlignment
-            />
-          </div>
+                        {/* Explore Section */}
+                        <motion.ul
+                          className="header-nav-list"
+                          variants={containerVariants}
+                          initial="hidden"
+                          animate="visible"
+                          exit="exit"
+                          key="exploreMenu"
+                        >
+                          {/* Heading */}
+                          <motion.li
+                            className="md:hidden mb-6 font-bold"
+                            variants={headingVariants}
+                            key="heading"
+                          >
+                            <h3>Explore</h3>
+                          </motion.li>
+
+                          {/* Items */}
+                          {exploreItems.map(
+                            ({ label, href, disabled }, index) => (
+                              <motion.li
+                                key={index}
+                                variants={itemVariants}
+                                className="font-bold text-2xl leading-tight"
+                              >
+                                <a
+                                  href={href}
+                                  aria-disabled={disabled ? "true" : "false"}
+                                  className={
+                                    disabled
+                                      ? "pointer-events-none opacity-20"
+                                      : ""
+                                  }
+                                >
+                                  {label}
+                                </a>
+                              </motion.li>
+                            )
+                          )}
+                        </motion.ul>
+                      </>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
+                {/* Bottom Sections (can animate them too if you want) */}
+                <NavListSection
+                  title="Albums"
+                  items={albumLinks}
+                  isVisible={isDropdownOpen}
+                />
+                <NavListSection
+                  title="Projects"
+                  items={projects}
+                  isVisible={false}
+                />
+                <NavListSection
+                  title="Explore"
+                  items={exploreItems}
+                  isVisible={false}
+                  bottomAlignment
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
           {/* socials */}
-          <div
+          <motion.div
             role="dialog"
             aria-modal="true"
             style={{ maxWidth: "135px" }}
-            className={cn(
-              "fixed md:absolute top-0 bottom-0 max-w-[353px] w-full transition-all right-0 text-right",
-              isMainMenuOpen
-                ? "visible translate-x-0"
-                : "invisible -translate-x-full"
-            )}
+            className="fixed md:absolute top-0 bottom-0 max-w-[353px] w-full right-0 text-right"
+            initial={{ x: 100 }}
+            animate={{
+              x: isMainMenuOpen ? 0 : 100,
+              transition: { duration: 0.35, ease: "easeInOut" },
+            }}
+
+            // transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
-            <div
-              className={cn(
-                "absolute left-0 top-0 bottom-0 h-full w-full flex flex-col justify-end items-end py-28 px-6 md:pb-20 transition-opacity duration-350 ease-in-out",
-                isMainMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-              )}
+            <motion.div
+              className="absolute left-0 top-0 bottom-0 h-full w-full flex flex-col justify-end items-end py-28 px-6 md:pb-20"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: isMainMenuOpen ? 1 : 0,
+                transition: { duration: 0.35, ease: "easeInOut" },
+              }}
             >
-              <ul className="header-nav-list">
+              <motion.ul
+                className="header-nav-list"
+                initial={{ opacity: 0, x: 10 }}
+                animate={{
+                  opacity: isDrawerOpen ? 1 : 0,
+                  x: isDrawerOpen ? 0 : 10,
+                  transition: {
+                    duration: 1,
+                    delayChildren: 0.2,
+                    staggerChildren: 0.1,
+                  },
+                }}
+              >
                 {[
                   {
                     href: "https://www.instagram.com/drakerelated/",
                     label: "Instagram",
-                    delay: "250ms",
+                    delay: 0.25,
                   },
                   {
                     href: "https://www.facebook.com/Drakerelated/",
                     label: "Facebook",
-                    delay: "300ms",
+                    delay: 0.3,
                   },
                   {
                     href: "https://twitter.com/drakerelated",
                     label: "Twitter",
-                    delay: "350ms",
+                    delay: 0.35,
                   },
                   {
                     href: "/pages/subscribe",
                     label: "Subscribe",
-                    delay: "250ms",
+                    delay: 0.25,
                     disabled: true,
                   },
                   {
                     href: "/policies/terms-of-service",
                     label: "Terms",
-                    delay: "300ms",
+                    delay: 0.3,
                     disabled: true,
                   },
                   {
                     href: "/policies/privacy-policy",
                     label: "Privacy",
-                    delay: "350ms",
+                    delay: 0.35,
                     disabled: true,
                   },
                   {
                     href: "/pages/faqs",
                     label: "FAQ",
-                    delay: "400ms",
+                    delay: 0.4,
                     disabled: true,
                   },
                 ].map(({ href, label, delay, disabled = false }, index) => (
-                  <li
+                  <motion.li
                     key={index}
-                    className={cn(
-                      "font-bold text-base leading-tight transition-all ease-in-out duration-1000",
-                      "opacity-0 invisible -translate-x-[10px]",
-                      isDrawerOpen && "opacity-100 visible translate-x-0",
-                      disabled && "pointer-events-none",
-                      `transition-delay-${delay}`
-                    )}
+                    className={`font-bold text-base leading-tight transition-all ease-in-out duration-1000 ${
+                      disabled && "pointer-events-none"
+                    }`}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{
+                      opacity: isDrawerOpen ? 1 : 0,
+                      x: isDrawerOpen ? 0 : -10,
+                      transition: { delay, duration: 0.5 },
+                    }}
                   >
                     <a href={href} aria-disabled={disabled}>
                       {label}
                     </a>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
-            </div>
-          </div>
+              </motion.ul>
+            </motion.div>
+          </motion.div>
 
-          <div className="md:w-2/5 w-4/5 max-w-sm p-6 pt-[10px] pb-20 bg-white md:border-l md:border-l-black transition-all fixed shadow-2xl shadow-neutral-800 text-black top-0 h-full z-[41] -right-full duration-1000 ease-in invisible">
-            <div className="grid">
-              <div className="h-screen flex flex-col">
-                <div className="h-18 px-1 border-b-black flex items-center justify-between ">
-                  <button className="font-semibold hidden cursor-pointer md:block antialiased">
-                    Close
-                  </button>
-                  <button className="font-semibold cursor-pointer hidden md:block antialiased">
-                    Cart (0)
-                  </button>
-                  <button className="font-semibold block md:hidden antialiased">
-                    Cart
-                  </button>
-                  <button className="font-semibold cursor-pointer block md:hidden text-neutral-300 antialiased">
-                    Close
-                  </button>
+          <AnimatePresence>
+            {isCartOpen && (
+              <motion.div
+                initial={{ right: "-100%" }} // Start off-screen (right)
+                animate={{ right: "0%" }} // Animate into view
+                exit={{ right: "-100%" }} // Animate out of view
+                transition={{
+                  duration: 0.6,
+                  ease: "easeInOut",
+                }}
+                className="md:w-2/5 w-4/5 max-w-sm p-6 pt-[10px] pb-20 bg-white md:border-l md:border-l-black fixed shadow-2xl shadow-neutral-800 text-black top-0 h-full z-[41]"
+              >
+                <div className="grid">
+                  <div className="h-screen flex flex-col">
+                    <div className="h-18 px-1 border-b-black flex items-center justify-between">
+                      <button
+                        className="font-semibold hidden cursor-pointer md:block antialiased"
+                        onClick={closeCart}
+                      >
+                        Close
+                      </button>
+                      <button className="font-semibold cursor-pointer hidden md:block antialiased">
+                        Cart (0)
+                      </button>
+                      <button className="font-semibold block md:hidden antialiased">
+                        Cart
+                      </button>
+                      <button
+                        onClick={closeCart}
+                        className="font-semibold cursor-pointer block md:hidden text-neutral-300 antialiased"
+                      >
+                        Close
+                      </button>
+                    </div>
+                    <section
+                      aria-labelledby="cart-contents"
+                      className="overflow-y-scroll scrollbar-hidden antialiased"
+                    >
+                      <ul className="flex flex-col"></ul>
+                    </section>
+                  </div>
                 </div>
-                <section
-                  aria-labelledby="cart-contents"
-                  className="overflow-y-scroll scrollbar-hidden antialiased"
-                >
-                  <ul className="flex flex-col"></ul>
-                </section>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </nav>
         <h1 className="left-1/2 -translate-x-1/2 fixed top-10  md:absolute md:top-auto">
           <Link className="font-bold" data-discover="true" href="/">
@@ -418,7 +585,8 @@ const Navbar = () => {
           <button
             id="close-btn-cart"
             type="button"
-            className="text-neutral-300 border-neutral-300 md:text-[inherit] md:border-none font-bold cursor px-2 h-8 relative border block"
+            onClick={openCart}
+            className="text-neutral-300 border-neutral-300 md:text-[inherit] md:border-none font-bold cursor px-2 h-8 relative border block cursor-pointer"
           >
             Cart <span className="hidden md:inline">( </span>0
             <span className="hidden md:inline"> )</span>
