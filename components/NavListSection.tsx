@@ -101,7 +101,7 @@ const NavListSection: React.FC<NavListSectionProps> = ({
             {items.map(({ label, href }, index) => (
               <motion.li
                 key={index}
-                className="font-bold z-20 text-2xl leading-tight pointer-events-none"
+                className="font-bold z-20 text-sm md:text-lg leading-tight pointer-events-none transition-all ease-in-out duration-1000"
                 variants={itemVariants}
               >
                 <a href={href} aria-disabled="false">

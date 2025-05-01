@@ -4,8 +4,12 @@ import Link from "next/link";
 import { useUIStore } from "../store/useDrawerStore";
 import NavListSection from "./NavListSection";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const isRooms = pathname.startsWith("/rooms/");
+
   const {
     isDrawerOpen,
     openDrawer,
@@ -212,12 +216,16 @@ const Navbar = () => {
       role="banner"
       className="fixed left-0 bottom-6 md:bottom-auto md:top-0 w-full md:h-full z-50 pointer-events-none -type-alternate"
     >
-      <div className="flex justify-between items-center md:h-[72px] pointer-events-auto mx-6 text-white">
+      <div
+        className={`flex justify-between items-center md:h-[72px] pointer-events-auto mx-6  ${
+          isRooms ? "text-white" : "text-black"
+        }`}
+      >
         <nav>
-          <ul className="header-nav-list flex items-center gap-7 relative z-20">
+          <ul className="header-nav-list flex items-center gap-3 relative z-20">
             <li className="hidden md:block">
               <button
-                className="text-base font-semibold transition-opacity duration-300 px-2.5 z-10"
+                className="text-sm font-semibold transition-opacity duration-300 px-2.5 z-10"
                 aria-disabled="false"
                 onClick={handleDropDown}
               >
@@ -226,7 +234,7 @@ const Navbar = () => {
             </li>
             <li className="hidden md:block">
               <button
-                className="text-base font-semibold transition-opacity duration-300 px-2.5 z-10"
+                className="text-sm font-semibold transition-opacity duration-300 px-2.5 z-10"
                 aria-disabled="false"
                 onClick={handleDropDown}
               >
@@ -235,7 +243,7 @@ const Navbar = () => {
             </li>
             <li className="hidden md:block">
               <a
-                className="text-base font-semibold transition-opacity duration-300 px-2.5 z-10"
+                className="text-sm font-semibold transition-opacity duration-300 px-2.5 z-10"
                 href="/pages/tour"
                 aria-disabled="false"
                 data-discover="true"
@@ -245,7 +253,7 @@ const Navbar = () => {
             </li>
             <li className="hidden md:block">
               <Link
-                className="text-base font-semibold transition-opacity duration-300 px-2.5 z-10"
+                className="text-sm font-semibold transition-opacity duration-300 px-2.5 z-10"
                 href={"/product"}
                 aria-disabled="false"
                 data-discover="true"
@@ -255,14 +263,14 @@ const Navbar = () => {
             </li>
             <li className="hidden md:block">
               <button
-                className="text-base font-semibold transition-opacity duration-300 px-2.5 z-10 fixed bottom-6 left-6"
+                className="text-sm font-semibold transition-opacity duration-300 px-2.5 z-10 fixed bottom-6 left-6"
                 aria-disabled="false"
               >
                 Explore
               </button>
             </li>
             <li className="hidden md:block">
-              <button className="text-base font-semibold transition-opacity duration-300 px-2.5 z-10 fixed bottom-6 right-6">
+              <button className="text-sm font-semibold transition-opacity duration-300 px-2.5 z-10 fixed bottom-6 right-6">
                 ®
               </button>
             </li>
@@ -277,7 +285,11 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="text-neutral-300 border-neutral-300 font-bold antialiased cursor-pointer px-2 h-10 relative border block"
+                      className={`font-bold antialiased cursor-pointer px-2 h-10 relative border block ${
+                        isRooms
+                          ? "text-neutral-300 border-neutral-300"
+                          : "text-black"
+                      }`}
                     >
                       Back
                     </motion.button>
@@ -289,7 +301,11 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="text-neutral-300 border-neutral-300 font-bold antialiased cursor-pointer px-2 h-10 relative border block"
+                      className={`font-bold antialiased cursor-pointer px-2 h-10 relative border block ${
+                        isRooms
+                          ? "text-neutral-300 border-neutral-300"
+                          : "text-black"
+                      }`}
                     >
                       Close
                     </motion.button>
@@ -302,7 +318,11 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="text-neutral-300 border-neutral-300 font-bold antialiased cursor-pointer px-2 h-10 relative border block"
+                    className={`font-bold antialiased cursor-pointer px-2 h-10 relative border block ${
+                      isRooms
+                        ? "text-neutral-300 border-neutral-300"
+                        : "text-black"
+                    }`}
                   >
                     Menu
                   </motion.button>
@@ -315,7 +335,10 @@ const Navbar = () => {
               <motion.div
                 role="dialog"
                 aria-modal="true"
-                className="fixed md:absolute z-10 top-0 bottom-0 max-w-[353px] w-full left-0 text-left"
+                // className=""
+                className={`fixed md:absolute z-10 top-0 bottom-0 max-w-[353px] w-full left-0 text-left ${
+                  !isRooms && "bg-white border-r-1 border-black"
+                }`}
                 style={{ width: "calc(-135px + 100vw)" }}
                 variants={drawerVariants}
                 initial="hidden"
@@ -347,7 +370,7 @@ const Navbar = () => {
                               <motion.li
                                 key={label}
                                 variants={itemVariants}
-                                className="font-bold text-2xl leading-tight"
+                                className="font-bold text-sm md:text-lg leading-tight transition-all ease-in-out duration-1000"
                               >
                                 {isDropdownTrigger ? (
                                   <button
@@ -391,7 +414,7 @@ const Navbar = () => {
                               <motion.li
                                 key={index}
                                 variants={itemVariants}
-                                className="font-bold text-2xl leading-tight"
+                                className="font-bold text-sm md:text-lg leading-tight transition-all ease-in-out duration-1000"
                               >
                                 <a
                                   href={href}
@@ -434,101 +457,103 @@ const Navbar = () => {
             )}
           </AnimatePresence>
           {/* socials */}
-          <motion.div
-            role="dialog"
-            aria-modal="true"
-            style={{ maxWidth: "135px" }}
-            className="fixed md:absolute top-0 bottom-0 max-w-[353px] w-full right-0 text-right"
-            initial={{ x: 100 }}
-            animate={{
-              x: isMainMenuOpen ? 0 : 100,
-              transition: { duration: 0.35, ease: "easeInOut" },
-            }}
-
-            // transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          >
+          {isRooms && (
             <motion.div
-              className="absolute left-0 top-0 bottom-0 h-full w-full flex flex-col justify-end items-end py-28 px-6 md:pb-20"
-              initial={{ opacity: 0 }}
+              role="dialog"
+              aria-modal="true"
+              style={{ maxWidth: "135px" }}
+              className="fixed md:absolute top-0 bottom-0 max-w-[353px] w-full right-0 text-right"
+              initial={{ x: 100 }}
               animate={{
-                opacity: isMainMenuOpen ? 1 : 0,
+                x: isMainMenuOpen ? 0 : 100,
                 transition: { duration: 0.35, ease: "easeInOut" },
               }}
+
+              // transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-              <motion.ul
-                className="header-nav-list"
-                initial={{ opacity: 0, x: 10 }}
+              <motion.div
+                className="absolute left-0 top-0 bottom-0 h-full w-full flex flex-col justify-end items-end py-28 px-6 md:pb-20"
+                initial={{ opacity: 0 }}
                 animate={{
-                  opacity: isDrawerOpen ? 1 : 0,
-                  x: isDrawerOpen ? 0 : 10,
-                  transition: {
-                    duration: 1,
-                    delayChildren: 0.2,
-                    staggerChildren: 0.1,
-                  },
+                  opacity: isMainMenuOpen ? 1 : 0,
+                  transition: { duration: 0.35, ease: "easeInOut" },
                 }}
               >
-                {[
-                  {
-                    href: "https://www.instagram.com/drakerelated/",
-                    label: "Instagram",
-                    delay: 0.25,
-                  },
-                  {
-                    href: "https://www.facebook.com/Drakerelated/",
-                    label: "Facebook",
-                    delay: 0.3,
-                  },
-                  {
-                    href: "https://twitter.com/drakerelated",
-                    label: "Twitter",
-                    delay: 0.35,
-                  },
-                  {
-                    href: "/pages/subscribe",
-                    label: "Subscribe",
-                    delay: 0.25,
-                    disabled: true,
-                  },
-                  {
-                    href: "/policies/terms-of-service",
-                    label: "Terms",
-                    delay: 0.3,
-                    disabled: true,
-                  },
-                  {
-                    href: "/policies/privacy-policy",
-                    label: "Privacy",
-                    delay: 0.35,
-                    disabled: true,
-                  },
-                  {
-                    href: "/pages/faqs",
-                    label: "FAQ",
-                    delay: 0.4,
-                    disabled: true,
-                  },
-                ].map(({ href, label, delay, disabled = false }, index) => (
-                  <motion.li
-                    key={index}
-                    className={`font-bold text-base leading-tight transition-all ease-in-out duration-1000 ${
-                      disabled && "pointer-events-none"
-                    }`}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{
-                      opacity: isDrawerOpen ? 1 : 0,
-                      x: isDrawerOpen ? 0 : -10,
-                      transition: { delay, duration: 0.5 },
-                    }}
-                  >
-                    <a href={href} aria-disabled={disabled}>
-                      {label}
-                    </a>
-                  </motion.li>
-                ))}
-              </motion.ul>
+                <motion.ul
+                  className="header-nav-list"
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{
+                    opacity: isDrawerOpen ? 1 : 0,
+                    x: isDrawerOpen ? 0 : 10,
+                    transition: {
+                      duration: 1,
+                      delayChildren: 0.2,
+                      staggerChildren: 0.1,
+                    },
+                  }}
+                >
+                  {[
+                    {
+                      href: "https://www.instagram.com/drakerelated/",
+                      label: "Instagram",
+                      delay: 0.25,
+                    },
+                    {
+                      href: "https://www.facebook.com/Drakerelated/",
+                      label: "Facebook",
+                      delay: 0.3,
+                    },
+                    {
+                      href: "https://twitter.com/drakerelated",
+                      label: "Twitter",
+                      delay: 0.35,
+                    },
+                    {
+                      href: "/pages/subscribe",
+                      label: "Subscribe",
+                      delay: 0.25,
+                      disabled: true,
+                    },
+                    {
+                      href: "/policies/terms-of-service",
+                      label: "Terms",
+                      delay: 0.3,
+                      disabled: true,
+                    },
+                    {
+                      href: "/policies/privacy-policy",
+                      label: "Privacy",
+                      delay: 0.35,
+                      disabled: true,
+                    },
+                    {
+                      href: "/pages/faqs",
+                      label: "FAQ",
+                      delay: 0.4,
+                      disabled: true,
+                    },
+                  ].map(({ href, label, delay, disabled = false }, index) => (
+                    <motion.li
+                      key={index}
+                      className={`font-bold text-sm md:text-lg leading-tight transition-all ease-in-out duration-1000 ${
+                        disabled && "pointer-events-none"
+                      }`}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{
+                        opacity: isDrawerOpen ? 1 : 0,
+                        x: isDrawerOpen ? 0 : -10,
+                        transition: { delay, duration: 0.5 },
+                      }}
+                    >
+                      <a href={href} aria-disabled={disabled}>
+                        {label}
+                      </a>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          )}
 
           <AnimatePresence>
             {isCartOpen && (
@@ -577,7 +602,7 @@ const Navbar = () => {
           </AnimatePresence>
         </nav>
         <h1 className="left-1/2 -translate-x-1/2 fixed top-10  md:absolute md:top-auto">
-          <Link className="font-bold" data-discover="true" href="/">
+          <Link className="font-bold text-xs md:text-lg" data-discover="true" href="/">
             Dilli Disco District
           </Link>
         </h1>
@@ -586,7 +611,9 @@ const Navbar = () => {
             id="close-btn-cart"
             type="button"
             onClick={openCart}
-            className="text-neutral-300 border-neutral-300 md:text-[inherit] md:border-none font-bold cursor px-2 h-8 relative border block cursor-pointer"
+            className={`md:text-[inherit] md:border-none font-bold cursor px-2 h-8 relative border block cursor-pointer text-sm ${
+              isRooms ? "text-neutral-300 border-neutral-300" : "text-black"
+            }`}
           >
             Cart <span className="hidden md:inline">( </span>0
             <span className="hidden md:inline"> )</span>

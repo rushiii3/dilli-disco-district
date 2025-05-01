@@ -1,15 +1,14 @@
 import DiscoverButton from "@/components/DiscoverButton";
 import LoungeEnterButton from "@/components/LoungeEnter";
 import React from "react";
-
 const page = () => {
   return (
     <section>
       <div className="room-wrapper h-screen h-screen-ios">
         <div
-          className="relative min-w-full h-full overflow-hidden"
+          className="relative min-w-full h-full overflow-hidden  w-[1665.6]"
           id="room"
-          style={{ width: "1921.6px", height: "100vh" }}
+          style={{ height: "100vh" }}
         >
           {/* <img
             alt=""
@@ -24,7 +23,7 @@ const page = () => {
       </picture> */}
 
           <img
-            className="w-full h-full pointer-events-none"
+            className="w-full h-full pointer-events-none object-cover"
             src="https://images.ctfassets.net/o2k19efe9565/2sBu6ImuBmK19uJffLro7n/e2bb2eec31c35b61ece359316c4e44d9/20250331_BEDROOM_SSS4U_V2.png?w=900"
             srcSet="https://images.ctfassets.net/o2k19efe9565/2sBu6ImuBmK19uJffLro7n/e2bb2eec31c35b61ece359316c4e44d9/20250331_BEDROOM_SSS4U_V2.png?w=1024"
             alt=""
