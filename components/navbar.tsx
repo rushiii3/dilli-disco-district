@@ -603,7 +603,7 @@ const Navbar = () => {
         </nav>
         <h1 className="left-1/2 -translate-x-1/2 fixed top-10  md:absolute md:top-auto">
           <Link className="font-bold text-xs md:text-lg" data-discover="true" href="/">
-            Dilli Disco District
+            DDD
           </Link>
         </h1>
         <div className="flex items-center">
