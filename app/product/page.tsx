@@ -277,7 +277,7 @@ const page = () => {
                         </div>
                       </div> */}
                       <div
-                        className="w-full h-[calc(100%-24px)] overflow-auto z-[-1]"
+                        className="w-full h-full overflow-auto z-[-1]"
                         style={{
                           msOverflowStyle: "none", // Hides scrollbar in IE/Edge
                           scrollbarWidth: "none", // Hides scrollbar in Firefox
@@ -285,7 +285,7 @@ const page = () => {
                       >
                         {/* Content goes here */}
 
-                        <div className="grid grid-cols-2 gap-5 p-4 md:grid-cols-3 lg:grid-cols-4 md:gap-2 md:p-8 py-16 mx-auto max-w-7xl">
+                        <div className="grid grid-cols-2 gap-5 p-4 md:grid-cols-3 md:gap-2 md:p-8 py-16 mx-auto max-w-7xl">
                           {data.data.map((product) => (
                             <Link
                               key={product.slug}
