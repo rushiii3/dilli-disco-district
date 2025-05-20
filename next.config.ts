@@ -14,7 +14,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'example.com',
+        hostname: 'cdn.meideinthe.cloud',
+      },
+      {
+        protocol: 'https',
+        hostname: 'videos.pexels.com',
       },
     ]
   }
