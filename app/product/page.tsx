@@ -2,23 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import data from "../../products.json";
+import ProductGrid from "./ProductGrid";
 const page = () => {
   return (
     <>
-      <div className="flex-1 flex items-center justify-center w-full overflow-hidden">
-        {/* relative w-full aspect-[3/4] */}
-        <Link href={"/"} className="h-[70vh] lg:h-[62vw] w-full relative">
-          <Image
-            src="/DDD2.jpeg"
-            alt="Model wearing black outfit from Drop 10 collection"
-            fill
-            className="object-cover"
-            priority
-          />
-        </Link>
-      </div>
-
-      <div className="grid grid-cols-2 gap-5 p-4 md:grid-cols-4 md:gap-2 md:p-8 py-16 mx-auto w-full">
+      {/* <div className="grid grid-cols-2 gap-5 p-4 md:grid-cols-4 md:gap-2 md:p-8 py-16 mx-auto w-full">
         {data.data.map((product) => (
           <Link
             key={product.slug}
@@ -36,7 +24,8 @@ const page = () => {
             </div>
           </Link>
         ))}
-      </div>
+      </div> */}
+      <ProductGrid data={data} />
       <div className="flex-1 flex items-center justify-center w-full overflow-hidden">
         {/* relative w-full aspect-[3/4] */}
         <Link href={"/"} className="h-[62vw] w-full relative">
