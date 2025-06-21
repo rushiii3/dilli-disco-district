@@ -1,37 +1,51 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-interface ImageType {
-  src: string;
+// ✅ Better naming and typing
+interface CharacterImage {
+  url: string;
+  alt?: string;
 }
 
 interface CharacterAnimationProps {
-  images: ImageType[];
+  images: CharacterImage[];
+  interval?: number; // ⏱ allow custom interval (optional)
 }
 
-const CharacterAnimation = ({ images }: CharacterAnimationProps) => {
-  const [index, setIndex] = useState(images.length - 1); // Start with the last image
+const CharacterAnimation = ({
+  images,
+  interval = 1000, // Default: 1s
+}: CharacterAnimationProps) => {
+  const [index, setIndex] = useState(images.length - 1);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex(prev => (prev === 0 ? images.length - 1 : prev - 1)); // Change image in reverse
-    }, 1000); // Update every 1 second
+    if (!images.length) return;
 
-    return () => clearInterval(interval);
-  }, [images.length]);
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    }, interval);
 
+    return () => clearInterval(timer);
+  }, [images.length, interval]);
+
+  if (!images.length) return null; // ✅ Avoid rendering when empty
+
+  const { url, alt } = images[index];
 
   return (
-    <div className={`transition-opacity duration-300 ease-in-out`}>
-     <Image
-      src={`${images[index].src}`}
-      alt="Character Animation"
-      width={800}
-      height={1000}
-      className="w-full h-auto object-cover"
-      priority
-    />
+    <div className="transition-opacity duration-300 ease-in-out w-full h-auto">
+      {url && (
+        <Image
+          src={url}
+          alt={alt || "Character Frame"}
+          width={800}
+          height={1000}
+          className="w-full h-auto object-cover"
+          priority
+        />
+      )}
     </div>
   );
 };

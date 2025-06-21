@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { Key, useState } from "react";
 import Image from "next/image";
 import TRexGame from "@/components/dino";
-import { motion } from "framer-motion";
 import SnakeGame from "@/components/snake-game";
 const FirstComponent = () => {
   return (
@@ -49,98 +48,22 @@ const FirstComponent = () => {
   );
 };
 
-const SecondComponent = () => {
-  // Create a random vertical keyframe pattern for the bobbing effect
-  const getRandomYKeyframes = () => {
-    const frames = [];
-    for (let i = 0; i < 10; i++) {
-      frames.push(Math.random() * 100 - 10); // Random value between -10 and +10
-    }
-    return frames;
-  };
-
-  const yKeyframes = getRandomYKeyframes();
-
-  return (
-    <>
-      <motion.div
-        initial={{ x: "100vw" }}
-        animate={{
-          x: "-100vw",
-          y: yKeyframes,
-        }}
-        transition={{
-          x: {
-            duration: 10,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "linear",
-          },
-          y: {
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-          },
-        }}
-        className="absolute top-1/2 -translate-y-1/2"
-      >
-        <Image
-          src="/pngss/7.png"
-          alt="Swimming fish"
-          width={300}
-          height={300}
-        />
-      </motion.div>
-      <motion.div
-        initial={{ x: "100vw" }}
-        animate={{
-          x: "-100vw",
-          y: yKeyframes,
-        }}
-        transition={{
-          x: {
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "linear",
-          },
-          y: {
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-          },
-        }}
-        className="absolute top-48 -translate-y-3/5"
-      >
-        <Image
-          src="/pngss/7.png"
-          alt="Swimming fish"
-          width={300}
-          height={300}
-        />
-      </motion.div>
-    </>
-  );
-};
-interface Product {
-  slug: string;
-  images: { src: string }[];
-  // Add other product fields if needed
+interface ProductGridPropsTyped {
+  products: {
+    handle: Key | null | undefined;
+    featuredImage: {
+      url: string;
+      altText?: string;
+      width: number;
+      height: number;
+    };
+  }[];
 }
 
-interface ProductGridProps {
-  data: {
-    data: Product[];
-    // Add other data fields if needed
-  };
-}
-
-export default function ProductGrid({ data }: ProductGridProps) {
+export default function ProductGrid({ products }: ProductGridPropsTyped) {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [activeComponent, setActiveComponent] = useState<
-    "first" | "trexgame" | "second" | "snakegame" | null
+    "first" | "trexgame" | "snakegame" | null
   >(null);
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const router = useRouter();
@@ -149,18 +72,13 @@ export default function ProductGrid({ data }: ProductGridProps) {
     setSelectedSlug(slug);
     setIsOverlayVisible(true);
     // Pick one randomly: first, game, or second
-    const components = ["first", "trexgame", "second", "snakegame"] as const;
+    const components = ["first", "trexgame", "snakegame"] as const;
     const randomIndex = Math.floor(Math.random() * components.length);
     const choice = components[randomIndex];
 
     setActiveComponent(choice);
 
     if (choice === "first") {
-      setTimeout(() => {
-        router.push(`/product/${slug}`);
-        setActiveComponent(null);
-      }, 3000);
-    } else if (choice === "second") {
       setTimeout(() => {
         router.push(`/product/${slug}`);
         setActiveComponent(null);
@@ -188,7 +106,34 @@ export default function ProductGrid({ data }: ProductGridProps) {
     <div className="relative">
       {/* Product Grid */}
       <div className="relative grid grid-cols-2 gap-5 p-4 md:grid-cols-4 md:gap-2 md:p-8 py-16 mx-auto w-full">
-        {data.data.map((product: any) => (
+        {products.map((product) => {
+          const productImage = product.featuredImage;
+
+          console.log(productImage);
+
+          return (
+            <div
+              key={product?.handle}
+              onClick={() => handleProductClick(`${product?.handle}`)}
+              className="group"
+            >
+              <div className="relative  w-full overflow-hidden">
+                {productImage?.url && (
+                  <Image
+                    src={productImage.url}
+                    alt={productImage.altText || `Product ${product.handle}`}
+                    width={productImage.width}
+                    height={productImage.height}
+                    sizes="(max-width: 768px) 200vw, (min-width: 769px) 50vw"
+                    className="object-cover aspect-[1/2] md:aspect-[2/3] xl:aspect-[1/2]"
+                    // fill
+                  />
+                )}
+              </div>
+            </div>
+          );
+        })}
+        {/* {data.data.map((product: any) => (
           <div
             key={product.slug}
             className="group cursor-pointer"
@@ -201,21 +146,25 @@ export default function ProductGrid({ data }: ProductGridProps) {
                 fill
                 className="object-cover"
                 priority
+                // placeholder="blur"
               />
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
 
       {/* GIF Overlay */}
       {/* Overlay with either FirstComponent or Game */}
       {isOverlayVisible && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div
+          className={`fixed inset-0 z-50 flex items-center justify-center  ${
+            activeComponent !== "first" && "backdrop-blur-md"
+          }`}
+        >
           {activeComponent === "first" && <FirstComponent />}
           {activeComponent === "trexgame" && (
             <TRexGame onGameEnd={handleGameEnd} />
           )}
-          {activeComponent === "second" && <SecondComponent />}
           {activeComponent === "snakegame" && (
             <SnakeGame onGameEnd={handleGameEnd} />
           )}

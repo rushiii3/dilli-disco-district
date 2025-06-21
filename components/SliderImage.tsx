@@ -32,18 +32,21 @@ const SliderImage = ({ images }: any) => {
       <SplideSlide style={{ height: "100%", width: "100%" }}>
         <CharacterAnimation images={images} />
       </SplideSlide>
-      {images.map((image: { src: string | StaticImport }, index: any) => (
-        <SplideSlide key={index} style={{ height: "100%", width: "100%" }}>
-          <Image
-            src={image.src}
-            alt="Character Animation"
-            width={800}
-            height={1000}
-            className="w-full h-auto object-cover"
-            priority
-          />
-        </SplideSlide>
-      ))}
+      {images.map(
+        (image: { src: string | StaticImport }, index: any) =>
+          image.src && (
+            <SplideSlide key={index} style={{ height: "100%", width: "100%" }}>
+              <Image
+                src={image.src}
+                alt="Character Animation"
+                width={800}
+                height={1000}
+                className="w-full h-auto object-cover"
+                priority
+              />
+            </SplideSlide>
+          )
+      )}
     </Splide>
   );
 };
