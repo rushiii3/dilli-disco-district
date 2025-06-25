@@ -8,6 +8,9 @@ import MainLayout from "@/components/MainLayout";
 import Providers from "@/provider";
 import client from "@/lib/shopify-client";
 import MenuLoader from "@/components/MenuLoader";
+import Navbar2 from "@/components/navbar2";
+import NextTopLoader from 'nextjs-toploader';
+
 // import Navbar2 from "@/components/navbar2";
 
 const basis33 = localFont({
@@ -44,8 +47,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={` ${basis33.variable} antialiased bg-gray-300`}>
+        <NextTopLoader />
         {/* <Navbar /> */}
-        {/* <Navbar2 /> */}
+        <Navbar2 />
         {/* <OverlayProvider>{children}</OverlayProvider> */}
         <MenuLoader collections={collections} />
         <Providers><MainLayout>{children}</MainLayout></Providers>

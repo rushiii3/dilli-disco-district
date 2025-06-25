@@ -9,8 +9,6 @@ import InfiniteProductGrid from "@/components/InfiniteProductGrid";
 import { fetchProductsFn } from "@/lib/fetchProductsFn";
 const page = async () => {
   const queryClient = new QueryClient();
-
-  // ✅ Server-side prefetch for initial products
   await queryClient.prefetchInfiniteQuery({
     queryKey: ["products"],
     queryFn: fetchProductsFn,
@@ -22,13 +20,9 @@ const page = async () => {
   });
 
   return (
-    <>
-      {/* <ProductGrid products={products} /> */}
-
-      <HydrationBoundary state={dehydrate(queryClient)}>
-        <InfiniteProductGrid />
-      </HydrationBoundary>
-    </>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <InfiniteProductGrid  />
+    </HydrationBoundary>
   );
 };
 

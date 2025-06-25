@@ -12,10 +12,7 @@ type Props = {
 }
 
 const CollectionMenuLoader = ({ collections }: Props) => {
-  const setCollectionMenu = useMenuStore((s) => s.setCollectionMenu)
-
-  console.log(collections);
-  
+  const setCollectionMenu = useMenuStore((s) => s.setCollectionMenu)  
   useEffect(() => {
     const menuItems = collections.map((c) => ({
       id: c.id,

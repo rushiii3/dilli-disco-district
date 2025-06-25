@@ -14,12 +14,6 @@ const PRODUCTS_QUERY = `
         node {
           handle
           title
-          priceRange {
-            minVariantPrice {
-              amount
-              currencyCode
-            }
-          }
           featuredImage {
             url
             altText
@@ -48,9 +42,7 @@ export async function GET(req: NextRequest) {
         after,
       }
     });
-    
-    console.log(data);
-    
+        
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const products = data.products.edges.map(({ node, cursor }: any) => ({
       ...node,

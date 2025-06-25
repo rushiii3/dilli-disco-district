@@ -1,11 +1,10 @@
 "use client";
-
+import React from "react";
 import { useEffect, useRef } from "react";
 import ProductGrid from "@/app/product/ProductGrid";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { fetchProductsFn } from "@/lib/fetchProductsFn";
-
-const InfiniteProductGrid = () => {
+import {  fetchCollectionProductsWithHandle } from "@/hooks/useCollectionProduct";
+const InfiniteCollectionProduct = ({ handle }: { handle: string }) => {
   const {
     isLoading,
     data,
@@ -15,16 +14,15 @@ const InfiniteProductGrid = () => {
     error,
     status,
   } = useInfiniteQuery({
-    queryKey: ["products"],
-    queryFn: fetchProductsFn,
+    queryKey: ["collections", handle, "products"] as [string, string, string],
+    queryFn: fetchCollectionProductsWithHandle,
     getNextPageParam: (lastPage) =>
-      lastPage.pageInfo.hasNextPage ? lastPage.pageInfo.endCursor : undefined,
-    staleTime: 60 * 1000,
+      lastPage.pageInfo?.hasNextPage ? lastPage.pageInfo.endCursor : undefined,
     initialPageParam: null,
   });
 
   const loaderRef = useRef<HTMLDivElement | null>(null);
-  const products = data?.pages.flatMap((page) => page.products) || [];
+  const products = data?.pages.flatMap((page) => page.products) || [];  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -45,17 +43,16 @@ const InfiniteProductGrid = () => {
   if (isLoading) return <p className="text-center py-10">Loading...</p>;
   if (status === "error")
     return <p className="text-center py-10">Error: {error.message}</p>;
-
   return (
-    <div className="px-4 md:px-8">
+    <>
       <ProductGrid products={products} />
       {isFetchingNextPage && (
         <p className="text-center py-4">Loading more...</p>
       )}
       {!hasNextPage && <p className="text-center py-4">No more products.</p>}
       <div ref={loaderRef} className="h-12" />
-    </div>
+    </>
   );
 };
 
-export default InfiniteProductGrid;
+export default InfiniteCollectionProduct;

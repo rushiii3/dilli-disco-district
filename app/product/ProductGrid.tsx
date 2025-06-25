@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'nextjs-toploader/app';
 import { Key, useState } from "react";
 import Image from "next/image";
 import TRexGame from "@/components/dino";

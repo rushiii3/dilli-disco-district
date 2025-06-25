@@ -188,3 +188,36 @@ export const ALL_PRODUCTS_QUERY = `#graphql
   }
   ${PRODUCT_CARD_FRAGMENT}
 `;
+
+
+
+export const GET_COLLECTION_PRODUCTS = `
+  query getCollectionProducts($handle: String!, $first: Int!, $after: String) {
+    collection(handle: $handle) {
+      title
+      products(first: $first, after: $after) {
+        edges {
+          cursor
+          node {
+            title
+            handle
+            images(first: 1) {
+              edges {
+                node {
+                  url
+                  altText
+                  height
+                  width
+                }
+              }
+            }
+            
+          }
+        }
+        pageInfo {
+          hasNextPage
+        }
+      }
+    }
+  }
+`;

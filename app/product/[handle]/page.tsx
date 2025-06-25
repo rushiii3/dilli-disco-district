@@ -32,19 +32,20 @@ function transformProductData(raw: any) {
       compareAtPrice: node.compareAtPrice,
       selectedOptions: node.selectedOptions,
     })),
-    rotatingImages: product.metafield?.references?.edges.map(({ node }: any) => node.image) ?? [],
+    rotatingImages:
+      product.metafield?.references?.edges.map(({ node }: any) => node.image) ??
+      [],
   };
 }
 
 type Props = {
   params: Promise<{ handle: string }>;
-  // searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 };
 
-export async function generateMetadata(
-  { params }: Props,
-  // parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: Props): // parent: ResolvingMetadata
+Promise<Metadata> {
   // read route params
   const { handle } = await params;
 
@@ -67,35 +68,33 @@ const ProductPage = async ({ params }: Props) => {
   });
 
   console.log(data);
-  
+
   const product = transformProductData(data);
 
   // console.log(product);
-  
+
   if (!product) return notFound(); // 404 page
 
   return (
     <main className=" px-6 gap-12 max-w-7xl mx-auto py-16">
-<div className="flex flex-col lg:flex-row gap-12 min-h-screen ">
+      <div className="flex flex-col lg:flex-row gap-12 min-h-screen ">
         {/* Left side with tall content */}
         <div className="lg:w-3/5  flex-col gap-4 md:flex hidden">
           <div className="overflow-hidden rounded-sm hover-scale">
             <CharacterAnimation images={product.rotatingImages} />
           </div>
           <div className=" grid-cols-2 gap-4 hidden md:grid">
-            {
-              product.images.slice(0, 2).map((image: any, index: number) => (
-                <div key={index} className="overflow-hidden rounded-sm">
-                  <Image
-                    src={image.url}
-                    alt={image.altText || `Product Image ${index + 1}`}
-                    width={400}
-                    height={500}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              ))
-            }
+            {product.images.slice(0, 2).map((image: any, index: number) => (
+              <div key={index} className="overflow-hidden rounded-sm">
+                <Image
+                  src={image.url}
+                  alt={image.altText || `Product Image ${index + 1}`}
+                  width={400}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
         <div className="w-full h-full md:hidden block">
@@ -108,12 +107,8 @@ const ProductPage = async ({ params }: Props) => {
                 {product.title}
               </h1>
               <div className="space-y-1">
-                <p className="text-sm line-through text-[#33333380]">
-                  09 USD
-                </p>
-                <p className="text-base font-medium">
-                  899 USD
-                </p>
+                <p className="text-sm line-through text-[#33333380]">09 USD</p>
+                <p className="text-base font-medium">899 USD</p>
               </div>
             </div>
 
@@ -187,7 +182,6 @@ const ProductPage = async ({ params }: Props) => {
         </div>
       </div>
 
-      
       <div className="pt-6">
         <button className="text-sm font-medium flex items-center gap-1 hover:opacity-70 transition-opacity">
           <span>you might also like</span>
