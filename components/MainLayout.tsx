@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import VideoPreloader from "@/components/VideoPreloader";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
-  const [isPreloading, setIsPreloading] = useState(true);
+  const [isPreloading, setIsPreloading] = useState(false);
 
   useEffect(() => {
-    setIsPreloading(true);
+    setIsPreloading(false);
     // const hasSeen = sessionStorage.getItem("hasSeenPreloader");
 
     // // Show preloader only once per session

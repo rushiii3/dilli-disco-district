@@ -132,11 +132,6 @@ export const GET_PRODUCT_BY_HANDLE_QUERY = `
   }
 `;
 
-
-
-
-
-
 // lib/queries.ts
 export const PRODUCT_CARD_FRAGMENT = `#graphql
   fragment ProductCard on Product {
@@ -189,8 +184,6 @@ export const ALL_PRODUCTS_QUERY = `#graphql
   ${PRODUCT_CARD_FRAGMENT}
 `;
 
-
-
 export const GET_COLLECTION_PRODUCTS = `
   query getCollectionProducts($handle: String!, $first: Int!, $after: String) {
     collection(handle: $handle) {
@@ -220,4 +213,24 @@ export const GET_COLLECTION_PRODUCTS = `
       }
     }
   }
+`;
+
+export const GET_RECOMMENDED_PRODUCTS = `
+query ProductRecommendations($handle: String!, $intent: ProductRecommendationIntent = RELATED) {
+  productRecommendations(productHandle: $handle, intent: $intent) {
+    title
+    handle
+    images(first: 1) {
+      edges {
+        node {
+          url
+          altText
+          height
+          width
+        }
+      }
+    }
+  }
+}
+
 `;

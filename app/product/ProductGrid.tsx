@@ -108,9 +108,6 @@ export default function ProductGrid({ products }: ProductGridPropsTyped) {
       <div className="relative grid grid-cols-2 gap-5 p-4 md:grid-cols-4 md:gap-2 md:p-8 py-16 mx-auto w-full">
         {products.map((product) => {
           const productImage = product.featuredImage;
-
-          console.log(productImage);
-
           return (
             <div
               key={product?.handle}

@@ -6,9 +6,13 @@ import React from "react";
 import SliderImage from "@/components/SliderImage";
 import { notFound } from "next/navigation";
 import client from "@/lib/shopify-client";
-import { GET_PRODUCT_BY_HANDLE_QUERY } from "@/lib/queries";
+import {
+  GET_PRODUCT_BY_HANDLE_QUERY,
+  GET_RECOMMENDED_PRODUCTS,
+} from "@/lib/queries";
 import { Metadata } from "next";
-import Variant from "./Variants";
+import ProductInfo from "./ProductInfo";
+import Link from "next/link";
 export const revalidate = 60; // ⏱ ISR enabled
 function transformProductData(raw: any) {
   const product = raw.product;
@@ -33,7 +37,7 @@ function transformProductData(raw: any) {
       compareAtPrice: node.compareAtPrice,
       selectedOptions: node.selectedOptions,
     })),
-    options : product.options,
+    options: product.options,
     rotatingImages:
       product.metafield?.references?.edges.map(({ node }: any) => node.image) ??
       [],
@@ -60,7 +64,7 @@ Promise<Metadata> {
   // const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: data.title,
+    title: data.product.title,
   };
 }
 const ProductPage = async ({ params }: Props) => {
@@ -69,14 +73,20 @@ const ProductPage = async ({ params }: Props) => {
     variables: { handle },
   });
 
-  if (!data.product){
+  const { data: recommended } = await client.request(GET_RECOMMENDED_PRODUCTS, {
+    variables: { handle: handle },
+  });
+
+  console.log("recommended", recommended);
+
+  if (!data.product) {
     return notFound();
   }
   console.log(data);
 
   const product = transformProductData(data);
 
-  console.log("products",product);
+  console.log("products", product);
 
   if (!product) return notFound(); // 404 page
 
@@ -106,59 +116,17 @@ const ProductPage = async ({ params }: Props) => {
           <SliderImage images={product.rotatingImages} />
         </div>
         <div className="lg:w-2/5 sticky top-16 h-fit  lg:p-4">
-          <div className="flex flex-col gap-4 mt-10">
-            <div className="space-y-3">
-              <h1 className="text-sm uppercase tracking-widest font-medium">
-                {product.title}
-              </h1>
-              <div className="space-y-1">
-                <p className="text-sm line-through text-[#33333380]">09 USD</p>
-                <p className="text-base font-medium">899 USD</p>
-              </div>
-            </div>
+          <ProductInfo product={product} />
+          <button className="text-sm font-medium flex items-center mt-10 gap-1 hover:opacity-70 transition-opacity">
+            <span>you might also like</span>
+            <span>↓</span>
+          </button>
+          {/* Color options */}
 
-            {/* Color options */}
-            <div className="space-y-4">
-              <p className="text-xs uppercase tracking-wider text-[#33333399]">
-                Color
-              </p>
-              <div className="flex gap-4">
-                <button className="group" aria-label="Select Black Color">
-                  <div
-                    className={`w-16 h-16 rounded-full flex items-center justify-center color-dot`}
-                  >
-                    <div className="w-14 h-14 bg-black rounded-full shadow-sm group-hover:shadow-md transition-shadow"></div>
-                  </div>
-                </button>
-                <button className="group" aria-label="Select Beige Color">
-                  <div
-                    className={`w-16 h-16 rounded-full flex items-center justify-center color-dot `}
-                  >
-                    <div className="w-14 h-14 bg-[#e8e3d9] rounded-full shadow-sm group-hover:shadow-md transition-shadow"></div>
-                  </div>
-                </button>
-              </div>
-            </div>
-            <Variant options={product.options} variants={product.variants} />            
+          {/* Add to cart button */}
 
-            {/* Add to cart button */}
-            <button
-              className={`w-full  py-1 border border-[#33333330] rounded-full text-center text-xl add-to-bag`}
-            >
-              Add to Cart
-              {/* <span>{selectedSize ? `add to bag - size ${selectedSize}` : "select your size"}</span>
-        <span>{selectedSize ? "+" : ""}</span> */}
-            </button>
-            <button
-              className={`w-full  py-1 border border-[#33333330] rounded-full text-center text-xl add-to-bag`}
-            >
-              Buy Now
-              {/* <span>{selectedSize ? `add to bag - size ${selectedSize}` : "select your size"}</span>
-        <span>{selectedSize ? "+" : ""}</span> */}
-            </button>
-
-            {/* Product details expandable sections */}
-            {/* <ProductDetails
+          {/* Product details expandable sections */}
+          {/* <ProductDetails
               details={product.details}
               sizeChart={product.sizeChart.map((size) => ({
                 ...size,
@@ -166,46 +134,49 @@ const ProductPage = async ({ params }: Props) => {
                 length: Number(size.length),
               }))}
             /> */}
-          </div>
         </div>
+        
       </div>
 
-      <div className="pt-6">
-        <button className="text-sm font-medium flex items-center gap-1 hover:opacity-70 transition-opacity">
-          <span>you might also like</span>
-          <span>+</span>
-        </button>
+      {/* Recommended products section */}
+      {recommended.productRecommendations.length > 0 && (
+        <div className="pt-6">
+          <div className="overflow-x-auto mt-6 w-full scrollbar-hide">
+            <div className="flex gap-4 max-w-7xl ">
+              {/* <ProductGrid
+              products={recommended.productRecommendations.map((item: any) => ({
+                handle: item.handle,
+                featuredImage: {
+                  url: item.featuredImage?.url,
+                  altText: item.featuredImage?.title || "",
+                  width: item.featuredImage?.width || 1000,
+                  height: item.featuredImage?.height || 1000,
+                },
+              }))}
+            /> */}
 
-        <div className="overflow-x-auto mt-6 w-full scrollbar-hide">
-          <div className="flex gap-4 max-w-7xl ">
-            {/* {youMayAlsoLike.map((item) => (
+              {recommended.productRecommendations.map((item: { handle: any; title: React.Key | null | undefined; images: { edges: { node: { height: number ; width: number ; url: string ; }; }[]; }; }) => (
                 <Link
-                href={`/product/${item.slug}`}
-                key={item.slug}
-                className="space-y-3 group cursor-pointer flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
-              >
-                <div className="aspect-[1/2] rounded-sm overflow-hidden hover-scale">
-                  <Image
-                    src={item.images?.[0]?.src || "/placeholder-image.jpg"} // Fallback to placeholder if images are undefined
-                    alt="Related Product"
-                    width={1000}
-                    height={1000}
-                    className="w-full h-full object-cover"
-                    priority
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-medium group-hover:underline">
-                     {item.title}
-                  </p>
-                  <p className="text-sm text-[#33333399]">{item.offer_price} USD</p>
-                </div>
-              </Link>
-
-            ))} */}
+                  href={`/product/${item.handle}`}
+                  key={item.title}
+                  className="space-y-3 group cursor-pointer flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
+                >
+                  <div className="aspect-[1/2] rounded-sm overflow-hidden hover-scale">
+                    <Image
+                      src={item.images?.edges[0].node.url} // Fallback to placeholder if images are undefined
+                      alt="Related Product"
+                      width={item.images?.edges[0].node.width}
+                      height={item.images?.edges[0].node.height}
+                      className="w-full h-full object-cover"
+                      priority
+                    />
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </main>
   );
 };

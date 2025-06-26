@@ -17,7 +17,8 @@ export default function ProductDetails({details, sizeChart}: {details: string, s
 
   return (
     <div className="space-y-6">
-      <div className="border-b border-[#33333320] pb-3">
+      {
+        details && <div className="border-b border-[#33333320] pb-3">
         <button
           onClick={() => toggleTab("details")}
           className="w-full text-left py-2 text-sm flex items-center justify-between group"
@@ -47,8 +48,10 @@ export default function ProductDetails({details, sizeChart}: {details: string, s
           </div>
         </div>
       </div>
+      }
+      
 
-      <div className="border-b border-[#33333320] pb-3">
+      {/* <div className="border-b border-[#33333320] pb-3">
         <button
           onClick={() => toggleTab("sizing")}
           className="w-full text-left py-2 text-sm flex items-center justify-between group"
@@ -88,7 +91,7 @@ export default function ProductDetails({details, sizeChart}: {details: string, s
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* <div className="border-b border-[#33333320] pb-3">
         <button
