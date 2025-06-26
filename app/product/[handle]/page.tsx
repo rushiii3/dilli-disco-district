@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import client from "@/lib/shopify-client";
 import { GET_PRODUCT_BY_HANDLE_QUERY } from "@/lib/queries";
 import { Metadata } from "next";
+import Variant from "./Variants";
 export const revalidate = 60; // ⏱ ISR enabled
 function transformProductData(raw: any) {
   const product = raw.product;
@@ -32,6 +33,7 @@ function transformProductData(raw: any) {
       compareAtPrice: node.compareAtPrice,
       selectedOptions: node.selectedOptions,
     })),
+    options : product.options,
     rotatingImages:
       product.metafield?.references?.edges.map(({ node }: any) => node.image) ??
       [],
@@ -71,7 +73,7 @@ const ProductPage = async ({ params }: Props) => {
 
   const product = transformProductData(data);
 
-  // console.log(product);
+  console.log("products",product);
 
   if (!product) return notFound(); // 404 page
 
@@ -134,24 +136,7 @@ const ProductPage = async ({ params }: Props) => {
                 </button>
               </div>
             </div>
-
-            {/* Size selection */}
-            <div className="space-y-4">
-              <p className="text-xs uppercase tracking-wider text-[#33333399]">
-                Size
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["XXS", "XS", "S", "M", "L", "XL", "XXL"].map((size) => (
-                  <button
-                    key={size}
-                    className={`w-12 h-12 rounded-full border border-[#33333330] flex items-center justify-center text-xs size-btn `}
-                    aria-label={`Select Size ${size}`}
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-            </div>
+            <Variant options={product.options} variants={product.variants} />            
 
             {/* Add to cart button */}
             <button

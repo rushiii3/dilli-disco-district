@@ -1,8 +1,8 @@
 export const fetchProductsFn = async ({ pageParam = null }) => {
   const url =
     typeof window === "undefined"
-      ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/products?first=2${pageParam ? `&after=${pageParam}` : ""}`
-      : `/api/products?first=2${pageParam ? `&after=${pageParam}` : ""}`;
+      ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/products?first=20${pageParam ? `&after=${pageParam}` : ""}`
+      : `/api/products?first=20${pageParam ? `&after=${pageParam}` : ""}`;
 
   const res = await fetch(url, { cache: "no-store" });
 
