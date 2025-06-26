@@ -69,6 +69,9 @@ const ProductPage = async ({ params }: Props) => {
     variables: { handle },
   });
 
+  if (!data.product){
+    return notFound();
+  }
   console.log(data);
 
   const product = transformProductData(data);

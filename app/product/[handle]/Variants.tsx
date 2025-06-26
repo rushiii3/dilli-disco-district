@@ -29,12 +29,13 @@ const Variant = ({variants,options}) => {
                       {options.map((option, index) => (
   <div className="space-y-4" key={index}>
     <p className="text-xs uppercase tracking-wider text-[#33333399]">
-      {option.name}
+      { option.name.toLowerCase() === "size" && option.name}
     </p>
     
     <div className="flex flex-wrap gap-2">
       {option.values.map((value) => {
-        const isColor = option.name.toLowerCase() === 'color';
+        const isColor = option.name.toLowerCase() !== 'size';
+        console.log(isColor,option.name.toLowerCase());
         const buttonStyle = isColor
           ? {
               backgroundColor: value.toLowerCase(), // Apply background for color options
@@ -43,8 +44,7 @@ const Variant = ({variants,options}) => {
             }
           : {};
 
-        return 
-            !isColor && 
+        return ( !isColor &&
           <button
             key={`${option.name}-${value}`}
             className={`w-12 h-12 rounded-full border flex items-center justify-center text-xs size-btn ${
@@ -54,8 +54,8 @@ const Variant = ({variants,options}) => {
             aria-label={`Select ${value}`}
           >
             {!isColor && value}
-          </button>
-        ;
+          </button>)
+        
       })}
     </div>
   </div>
