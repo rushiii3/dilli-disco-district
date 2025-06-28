@@ -77,16 +77,14 @@ const ProductPage = async ({ params }: Props) => {
     variables: { handle: handle },
   });
 
-  console.log("recommended", recommended);
+
 
   if (!data.product) {
     return notFound();
   }
-  console.log(data);
+
 
   const product = transformProductData(data);
-
-  console.log("products", product);
 
   if (!product) return notFound(); // 404 page
 

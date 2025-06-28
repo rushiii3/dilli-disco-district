@@ -234,3 +234,23 @@ query ProductRecommendations($handle: String!, $intent: ProductRecommendationInt
 }
 
 `;
+
+export const CART_CREATE_QUERY = `
+  mutation {
+    cartCreate {
+      cart {
+        id
+      }
+    }
+  }
+`;
+
+export const VERIFY_CART_QUERY = `
+  query getCart($cartId: ID!) {
+    cart(id: $cartId) {
+      id
+      checkoutUrl
+      totalQuantity
+    }
+  }
+`;

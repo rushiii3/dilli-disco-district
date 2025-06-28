@@ -4,10 +4,7 @@ import Link from "next/link";
 import { useMenuStore } from "@/store/useMenuStore";
 
 const Navbar2 = () => {
-  const collectionMenu = useMenuStore((s) => s.collectionMenu);
-
-  console.log("collectionMenu", collectionMenu);
-  
+  const collectionMenu = useMenuStore((s) => s.collectionMenu);  
   const [backdrop, setBackdrop] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const handleOpenMenu = () => {
