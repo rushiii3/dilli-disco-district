@@ -9,12 +9,7 @@ import Providers from "@/provider";
 import client from "@/lib/shopify-client";
 import MenuLoader from "@/components/MenuLoader";
 import Navbar2 from "@/components/navbar2";
-import NextTopLoader from 'nextjs-toploader';
-import { CART_CREATE_QUERY, VERIFY_CART_QUERY } from "@/lib/queries";
-import { cookies } from "next/headers";
-import { GenerateCartToken } from "@/lib/cookie";
-
-// import Navbar2 from "@/components/navbar2";
+import NextTopLoader from "nextjs-toploader";
 
 const basis33 = localFont({
   src: "../font/basis33.ttf",
@@ -32,7 +27,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
   const { data } = await client.request(`query {
     collections(first: 25) {
       edges {
@@ -43,30 +37,6 @@ export default async function RootLayout({
       }
     }
   }`);
-  const cookieCartId = cookieStore.get("shopify_cart_id")?.value || null;
-  console.log(cookieCartId);
-  if (!cookieCartId) {
-    console.log("generatingggg");
-    // GenerateCartToken();
-    const url =
-      typeof window === "undefined"
-        ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/cart/create`
-        : `/api/cart/create`;
-    const res = await fetch(url, { cache: "no-store" });
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch collection products");
-    }
-
-    return res.json();
-  } else {
-    const { data: cookieCartID } = await client.request(VERIFY_CART_QUERY, {
-      variables: {
-        cartId: cookieCartId
-      }
-    });
-    console.log(cookieCartID);
-  }
 
 
   const collections = data.collections.edges.map((item: any) => ({
@@ -82,8 +52,9 @@ export default async function RootLayout({
         <Navbar2 />
         {/* <OverlayProvider>{children}</OverlayProvider> */}
         <MenuLoader collections={collections} />
-        <Providers><MainLayout>{children}</MainLayout></Providers>
-
+        <Providers>
+          <MainLayout>{children}</MainLayout>
+        </Providers>
       </body>
     </html>
   );

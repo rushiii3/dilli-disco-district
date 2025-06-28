@@ -1,12 +1,33 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import ProductDetails from "@/components/product-details";
 import React, { useState, useEffect } from "react";
 
-const ProductInfo = ({ product }) => {
+type Variant = {
+  id: string;
+  availableForSale: boolean;
+  price: { amount: string; currencyCode: string };
+  compareAtPrice?: { amount: string; currencyCode: string };
+  selectedOptions: { name: string; value: string }[];
+};
+
+type Product = {
+  title: string;
+  description: string;
+  variants: Variant[];
+  options: { name: string; values: string[] }[];
+};
+
+interface ProductInfoProps {
+  product: Product;
+  cartId?: string;
+}
+
+const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   console.log("ProductInfo component rendered with product:", product);
 
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
-  const [selectedVariant, setSelectedVariant] = useState(null);
+  const [selectedVariant, setSelectedVariant] = useState<Variant | null>(null);
 
   useEffect(() => {
     if (!selectedSize) {
@@ -14,9 +35,9 @@ const ProductInfo = ({ product }) => {
       return;
     }
 
-    const match = product.variants.find((variant) =>
+    const match = product.variants.find((variant: { selectedOptions: any[]; }) =>
       variant.selectedOptions.some(
-        (opt) => opt.name === "Size" && opt.value === selectedSize
+        (opt: { name: string; value: string; }) => opt.name === "Size" && opt.value === selectedSize
       )
     );
     setSelectedVariant(match || null);
@@ -24,9 +45,43 @@ const ProductInfo = ({ product }) => {
 
   const handleAddToCart = () => {
     if (selectedVariant && selectedVariant.availableForSale) {
+      console.log("Adding to cart:", selectedVariant.id);
+      try {
+        const url =
+          typeof window === "undefined"
+            ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/cart/add`
+            : `/api/cart/add`;
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            variantId: selectedVariant.id,
+            quantity: 1,
+          }),
+          credentials: "include", // Crucial for cookies
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to add to cart");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Added to cart successfully:", data);
+            // toast.success("Added to cart successfully");
+          });
+      } catch (error) {
+        console.error("Error adding to cart:", error);
+        // toast.error("Could not add to cart");
+      }
+      // Here you would typically call your add to cart API
+      // For example:
+      // addToCart(selectedVariant.id, 1);
     }
   };
-  const lowestPricedVariant = product.variants.reduce((min, current) =>
+  const lowestPricedVariant = product.variants.reduce((min: Variant, current: Variant) =>
     parseFloat(current.price.amount) < parseFloat(min.price.amount)
       ? current
       : min
@@ -45,7 +100,7 @@ const ProductInfo = ({ product }) => {
             lowestPricedVariant.compareAtPrice ? (
               <span className="line-through text-gray-500">
                 {selectedVariant?.compareAtPrice?.amount ||
-                  lowestPricedVariant.compareAtPrice.amount}{" "}
+                  lowestPricedVariant.compareAtPrice?.amount}{" "}
                 {lowestPricedVariant.price.currencyCode}
               </span>
             ) : null}
@@ -77,7 +132,7 @@ const ProductInfo = ({ product }) => {
         <div className="mb-4">
           <p className=" mb-2">Select Size:</p>
           <div className="flex gap-2 flex-wrap">
-            {product.options[0].values.map((size) => (
+            {product.options[0].values.map((size: string ) => (
               <button
                 key={size}
                 onClick={() => setSelectedSize(size)}
@@ -111,7 +166,7 @@ const ProductInfo = ({ product }) => {
           : "Add to Cart"}
       </button>
 
-      <ProductDetails details={product.description} />
+      <ProductDetails details={product.description}  sizeChart={null}/>
     </div>
   );
 };

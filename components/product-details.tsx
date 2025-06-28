@@ -4,7 +4,8 @@ import { useState } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
 // import Image from "next/image"
 
-export default function ProductDetails({details, sizeChart}: {details: string, sizeChart: { size: string, chest: number, length: number }[]}) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function ProductDetails({details, sizeChart}: {details: string, sizeChart: { size: string, chest: number, length: number }[] | null}) {
   const [activeTab, setActiveTab] = useState<string | null>(null)
 
   const toggleTab = (tab: string) => {

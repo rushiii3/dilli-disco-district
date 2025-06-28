@@ -46,8 +46,6 @@ const InfiniteProductGrid = () => {
   if (status === "error")
     return <p className="text-center py-10">Error: {error.message}</p>;
 
-  console.log(products);
-  
   return (
     <div className="px-4 md:px-8">
       <ProductGrid products={products} />

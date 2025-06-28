@@ -14,6 +14,7 @@ import { Metadata } from "next";
 import ProductInfo from "./ProductInfo";
 import Link from "next/link";
 export const revalidate = 60; // ⏱ ISR enabled
+
 function transformProductData(raw: any) {
   const product = raw.product;
 
@@ -77,12 +78,9 @@ const ProductPage = async ({ params }: Props) => {
     variables: { handle: handle },
   });
 
-
-
   if (!data.product) {
     return notFound();
   }
-
 
   const product = transformProductData(data);
 
@@ -133,7 +131,6 @@ const ProductPage = async ({ params }: Props) => {
               }))}
             /> */}
         </div>
-        
       </div>
 
       {/* Recommended products section */}
@@ -153,24 +150,34 @@ const ProductPage = async ({ params }: Props) => {
               }))}
             /> */}
 
-              {recommended.productRecommendations.map((item: { handle: any; title: React.Key | null | undefined; images: { edges: { node: { height: number ; width: number ; url: string ; }; }[]; }; }) => (
-                <Link
-                  href={`/product/${item.handle}`}
-                  key={item.title}
-                  className="space-y-3 group cursor-pointer flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
-                >
-                  <div className="aspect-[1/2] rounded-sm overflow-hidden hover-scale">
-                    <Image
-                      src={item.images?.edges[0].node.url} // Fallback to placeholder if images are undefined
-                      alt="Related Product"
-                      width={item.images?.edges[0].node.width}
-                      height={item.images?.edges[0].node.height}
-                      className="w-full h-full object-cover"
-                      priority
-                    />
-                  </div>
-                </Link>
-              ))}
+              {recommended.productRecommendations.map(
+                (item: {
+                  handle: any;
+                  title: React.Key | null | undefined;
+                  images: {
+                    edges: {
+                      node: { height: number; width: number; url: string };
+                    }[];
+                  };
+                }) => (
+                  <Link
+                    href={`/product/${item.handle}`}
+                    key={item.title}
+                    className="space-y-3 group cursor-pointer flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
+                  >
+                    <div className="aspect-[1/2] rounded-sm overflow-hidden hover-scale">
+                      <Image
+                        src={item.images?.edges[0].node.url} // Fallback to placeholder if images are undefined
+                        alt="Related Product"
+                        width={item.images?.edges[0].node.width}
+                        height={item.images?.edges[0].node.height}
+                        className="w-full h-full object-cover"
+                        priority
+                      />
+                    </div>
+                  </Link>
+                )
+              )}
             </div>
           </div>
         </div>
