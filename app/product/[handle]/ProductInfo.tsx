@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import ProductDetails from "@/components/product-details";
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
 type Variant = {
@@ -26,6 +27,7 @@ interface ProductInfoProps {
 const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   console.log("ProductInfo component rendered with product:", product);
 
+  const router = useRouter();
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedVariant, setSelectedVariant] = useState<Variant | null>(null);
 
@@ -70,15 +72,13 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           })
           .then((data) => {
             console.log("Added to cart successfully:", data);
+            router.push("/checkout");
             // toast.success("Added to cart successfully");
           });
       } catch (error) {
         console.error("Error adding to cart:", error);
         // toast.error("Could not add to cart");
       }
-      // Here you would typically call your add to cart API
-      // For example:
-      // addToCart(selectedVariant.id, 1);
     }
   };
   const lowestPricedVariant = product.variants.reduce((min: Variant, current: Variant) =>

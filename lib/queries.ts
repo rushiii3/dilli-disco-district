@@ -254,3 +254,43 @@ export const VERIFY_CART_QUERY = `
     }
   }
 `;
+
+// lib/queries.ts
+
+export const SEARCH_PRODUCTS_QUERY = `
+  query SearchProducts($query: String!, $first: Int, $after: String) {
+    search(query: $query, first: $first, after: $after, types: [PRODUCT]) {
+      edges {
+        cursor
+        node {
+          ... on Product {
+            id
+            handle
+            title
+            description
+            featuredImage {
+              url
+              altText
+              width
+              height
+            }
+                         options {
+              name
+              values
+            }
+            priceRange {
+              minVariantPrice {
+                amount
+                currencyCode
+              }
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+`;

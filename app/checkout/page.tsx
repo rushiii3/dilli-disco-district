@@ -69,7 +69,7 @@ const Page = async () => {
   });
   const cartData = data?.cart || null;
   return (
-    <div className="min-h-screen text-xl">
+    <div className="min-h-screen text-xl pb-32 md:pb-0">
       {/* Mobile Header */}
       {/* <div className="md:hidden">
         <div className="flex items-center justify-between px-4 py-4">

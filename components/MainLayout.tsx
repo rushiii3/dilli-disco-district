@@ -7,7 +7,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   const [isPreloading, setIsPreloading] = useState(false);
 
   useEffect(() => {
-    setIsPreloading(true);
+    setIsPreloading(false);
     // const hasSeen = sessionStorage.getItem("hasSeenPreloader");
 
     // // Show preloader only once per session
