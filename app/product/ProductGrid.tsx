@@ -4,7 +4,7 @@ import { useRouter } from 'nextjs-toploader/app';
 import { Key, useState } from "react";
 import Image from "next/image";
 import TRexGame from "@/components/dino";
-import SnakeGame from "@/components/snake-game";
+// import SnakeGame from "@/components/snake-game";
 const FirstComponent = () => {
   return (
     <>
@@ -63,7 +63,7 @@ interface ProductGridPropsTyped {
 export default function ProductGrid({ products }: ProductGridPropsTyped) {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [activeComponent, setActiveComponent] = useState<
-    "first" | "trexgame" | "snakegame" | null
+    "first" | "trexgame"  | null
   >(null);
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const router = useRouter();
@@ -72,7 +72,7 @@ export default function ProductGrid({ products }: ProductGridPropsTyped) {
     setSelectedSlug(slug);
     setIsOverlayVisible(true);
     // Pick one randomly: first, game, or second
-    const components = ["first", "trexgame", "snakegame"] as const;
+    const components = ["first", "trexgame"] as const;
     const randomIndex = Math.floor(Math.random() * components.length);
     const choice = components[randomIndex];
 
@@ -94,12 +94,12 @@ export default function ProductGrid({ products }: ProductGridPropsTyped) {
         setActiveComponent(null);
       }
     }
-    if (activeComponent === "snakegame") {
-      if (score >= 200 && selectedSlug) {
-        router.push(`/product/${selectedSlug}`);
-        setActiveComponent(null);
-      }
-    }
+    // if (activeComponent === "snakegame") {
+    //   if (score >= 200 && selectedSlug) {
+    //     router.push(`/product/${selectedSlug}`);
+    //     setActiveComponent(null);
+    //   }
+    // }
   };
 
   return (
@@ -162,9 +162,9 @@ export default function ProductGrid({ products }: ProductGridPropsTyped) {
           {activeComponent === "trexgame" && (
             <TRexGame onGameEnd={handleGameEnd} />
           )}
-          {activeComponent === "snakegame" && (
+          {/* {activeComponent === "snakegame" && (
             <SnakeGame onGameEnd={handleGameEnd} />
-          )}
+          )} */}
         </div>
       )}
     </div>

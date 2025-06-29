@@ -25,7 +25,7 @@ const Page = async ({ params }: Props) => {
   return (
     <main className=" px-6 gap-12 max-w-7xl mx-auto py-16">
       <div className="gap-12 min-h-screen ">
-        <h1 className="text-4xl font-bold mb-4 capitalize">{handle}</h1>
+        <h1 className="text-4xl font-bold mb-4 capitalize text-center lg:text-left">{handle}</h1>
         <HydrationBoundary state={dehydrate(queryClient)}>
           <InfiniteCollectionProduct handle={handle} />
         </HydrationBoundary>

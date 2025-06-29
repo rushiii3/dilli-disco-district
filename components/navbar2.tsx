@@ -18,7 +18,8 @@ const Navbar2 = () => {
         style={{ zIndex: 10 }}
       >
         <div className="flex flex-row items-center justify-between pr-[80px] w-[330px]">
-          <Link href={"/"}>SHOP</Link> <Link href={"/"}>HEHEEH</Link>
+          <Link href={"/"}>SHOP</Link> 
+          {/* <Link href={"/"}>HEHEEH</Link> */}
         </div>
         <div
           className="flex justify-center items-center"
